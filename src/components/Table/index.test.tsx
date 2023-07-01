@@ -1,11 +1,9 @@
 import { render, screen } from "@testing-library/react";
 import Table from "./index";
-import employeeData from "../../data";
+import employeeData, { EmployeeData } from "../../data";
 
 test("Table component should render", () => {
-  //   render(<Table data={employeeData} />);
-  render(<Table />);
+  render(<Table<EmployeeData> data={employeeData} />);
 
-  //   expect(screen.getAllByRole("row")).toHaveLength(100);
-  expect(screen.getByText("Hello")).toBeInTheDocument();
+  expect(screen.getAllByRole("row")).toHaveLength(100);
 });
