@@ -1,7 +1,6 @@
 .table {
   display: grid;
   grid-template-columns: repeat(11, 1fr);
-  grid-template-rows: repeat(auto-fill, 120px);
 }
 
 thead,
