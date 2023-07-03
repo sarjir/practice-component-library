@@ -1,6 +1,6 @@
-import { render, screen } from "@testing-library/react";
+import { render, screen, waitFor } from "@testing-library/react";
+import userEvent from "@testing-library/user-event";
 import Table from "./index";
-import employeeData, { EmployeeData } from "../../data";
 
 test("Table component should render", () => {
   render(<Table />);
@@ -21,4 +21,18 @@ test("Table component should render", () => {
   expect(
     screen.getAllByText("EEO Compliance Manager").length
   ).toBeGreaterThanOrEqual(1);
+});
+
+test("Should allow filtering of which columns to display", async () => {
+  render(<Table />);
+
+  expect(screen.getByRole("button", { name: "||| COLUMNS" }));
+  expect(screen.queryByRole("menu")).not.toBeInTheDocument();
+
+  userEvent.click(screen.getByRole("button", { name: "||| COLUMNS" }));
+  await waitFor(() => {
+    expect(screen.getByRole("menu")).toBeInTheDocument();
+  });
+
+  expect(screen.queryAllByRole("checkbox").length).toBe(11);
 });
