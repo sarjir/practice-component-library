@@ -1,4 +1,4 @@
-export interface EmployeeData {
+export type EmployeeData = {
   "id": string,
   "Name": string,
   "Website":string,

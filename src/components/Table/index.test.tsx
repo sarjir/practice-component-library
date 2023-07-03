@@ -5,7 +5,7 @@ import employeeData, { EmployeeData } from "../../data";
 test("Table component should render", () => {
   render(<Table />);
 
-  expect(screen.getAllByRole("row")).toHaveLength(100);
+  expect(screen.getAllByRole("row")).toHaveLength(100 + 1);
   expect(screen.getByText("Alan Spencer")).toBeInTheDocument();
   expect(
     screen.getByText("16b8af4d-be37-5dc9-b1aa-1f6db1d49923")
