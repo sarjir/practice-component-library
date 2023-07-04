@@ -1,9 +1,10 @@
 import { render, screen, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import Table from "./index";
+import employeeData from "../../data";
 
 test("Table component should render", () => {
-  render(<Table />);
+  render(<Table data={employeeData} />);
 
   expect(screen.getAllByRole("row")).toHaveLength(100 + 1);
   expect(screen.getByText("Alan Spencer")).toBeInTheDocument();
@@ -24,7 +25,7 @@ test("Table component should render", () => {
 });
 
 test("Should allow filtering of which columns to display", async () => {
-  render(<Table />);
+  render(<Table data={employeeData} />);
 
   expect(screen.getByRole("button", { name: "||| COLUMNS" }));
   expect(screen.queryByRole("menu")).not.toBeInTheDocument();
