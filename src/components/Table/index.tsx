@@ -3,18 +3,13 @@ import EmployeeRow from "../EmployeeRow";
 import EmployeeTableHeader from "../EmployeeTableHeader";
 import employeeData from "../../data";
 import styles from "./table.module.css";
+import TableMenu from "../TableMenu";
 
 type Props<Type> = {
   data: Type[];
 };
 
 const Table = (): JSX.Element => {
-  const [editMenuVisibility, setEditMenuVisibility] = useState(false);
-
-  const handleEditColumnsClick = () => {
-    setEditMenuVisibility((prev) => !prev);
-  };
-
   const filteredMenuItems = Object.keys(employeeData[0]).filter((key) => {
     return (
       key !== "Is admin?" &&
@@ -24,18 +19,9 @@ const Table = (): JSX.Element => {
     );
   });
 
-  const menuItems = filteredMenuItems.map((key) => {
-    return (
-      <span key={key}>
-        <input id={`${key}ColumnCheckbox`} type="checkbox" />
-        <label htmlFor={`${key}ColumnCheckbox`}>{key}</label>
-      </span>
-    );
-  });
   return (
     <>
-      <button onClick={handleEditColumnsClick}>||| COLUMNS</button>
-      {editMenuVisibility && <div role="menu">{menuItems}</div>}
+      <TableMenu menuItems={filteredMenuItems} />
       <table className={styles.table}>
         {<EmployeeTableHeader items={filteredMenuItems} />}
         <tbody>
