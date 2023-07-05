@@ -7,7 +7,7 @@ import styles from "./table.module.css";
 import TableMenu from "../TableMenu";
 
 interface HasId {
-  [key: string]: string; // Is this negating what I want to achieve?
+  [key: string]: string | number; // Is this negating what I want to achieve?
   id: string;
 }
 
@@ -15,7 +15,9 @@ type Props<Type> = {
   data: Type[];
 };
 
-function Table<Type extends HasId>({ data = [] }: Props<Type>): JSX.Element {
+function FilterableTable<Type extends HasId>({
+  data = [],
+}: Props<Type>): JSX.Element {
   // FIXME: Remove this filtering by removing the data from the source instead
   const columns = Object.keys(data[0]).filter((key) => {
     return (
@@ -47,4 +49,4 @@ function Table<Type extends HasId>({ data = [] }: Props<Type>): JSX.Element {
   );
 }
 
-export default Table;
+export default FilterableTable;
