@@ -7,9 +7,6 @@ const meta: Meta<typeof Table> = {
   title: 'Table',
   component: Table,
   tags: ['autodocs'],
-  argTypes: {
-    layout: 'fullscreen',
-  },
 };
 
 export default meta;
