@@ -16,7 +16,10 @@ type Props<Type> = {
 
 function Table<Type extends HasId>({ columns, data }: Props<Type>) {
   return (
-    <table className={styles.table}>
+    <table
+      className={styles.table}
+      style={{ gridTemplateColumns: `repeat(${columns.length}, 1fr)` }}
+    >
       <TableHeader items={columns} />
       <tbody>
         {data.map((item) => {
