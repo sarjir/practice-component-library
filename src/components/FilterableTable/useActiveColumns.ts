@@ -8,15 +8,15 @@ export function useActiveColumns(originalState: string[]): [string[], (column: s
       ? updateActiveColumns(removeItemFromArray(activeColumns, column))
       : updateActiveColumns([...activeColumns, column]);
   };
-
-  const removeItemFromArray = (
-    array: string[],
-    itemToRemove: string
-  ): string[] => {
-    const index = array.indexOf(itemToRemove);
-
-    return [...array.slice(0, index), ...array.slice(index + 1)];
-  };
-
+  
   return [activeColumns, handleActiveColumns]
 }
+
+const removeItemFromArray = (
+  array: string[],
+  itemToRemove: string
+): string[] => {
+  const index = array.indexOf(itemToRemove);
+
+  return [...array.slice(0, index), ...array.slice(index + 1)];
+};
