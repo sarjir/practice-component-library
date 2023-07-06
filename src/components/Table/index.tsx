@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Row from "../Row";
-import EmployeeTableHeader from "../EmployeeTableHeader";
+import TableHeader from "../TableHeader";
 import styles from "./table.module.css";
 
 // FIXME: Copied from FilterableTable
@@ -17,7 +17,7 @@ type Props<Type> = {
 function Table<Type extends HasId>({ columns, data }: Props<Type>) {
   return (
     <table className={styles.table}>
-      <EmployeeTableHeader items={columns} />
+      <TableHeader items={columns} />
       <tbody>
         {data.map((item) => {
           return (

@@ -1,5 +1,5 @@
 import { render, screen } from "@testing-library/react";
-import TableHeader from "./";
+import TableHeader from ".";
 
 test("Table header renders", () => {
   const headerItems = ["id", "name", "rating"];

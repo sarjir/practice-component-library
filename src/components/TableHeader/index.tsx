@@ -1,4 +1,4 @@
-function EmployeeTableHeader({ items }: { items: string[] }): JSX.Element {
+function TableHeader({ items }: { items: string[] }): JSX.Element {
   return (
     <thead>
       <tr>
@@ -14,4 +14,4 @@ function EmployeeTableHeader({ items }: { items: string[] }): JSX.Element {
   );
 }
 
-export default EmployeeTableHeader;
+export default TableHeader;
