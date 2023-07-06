@@ -14,15 +14,7 @@ type Props<Type> = {
 function FilterableTable<Type extends HasId>({
   data = [],
 }: Props<Type>): JSX.Element {
-  // FIXME: Remove this filtering by removing the data from the source instead
-  const columns = Object.keys(data[0]).filter((key) => {
-    return (
-      key !== "Is admin?" &&
-      key !== "Updated on" &&
-      key !== "Salary" &&
-      key !== "Created on"
-    );
-  });
+  const columns = Object.keys(data[0]);
 
   return (
     <>

@@ -9,15 +9,11 @@ export type EmployeeData = {
   "City": string,
   "Country": string,
   "Company": string,
-  "Position": string,
-  "Updated on": string,
-  "Created on": string,
-  "Is admin?": string,
-  "Salary": string
+  "Position": string
 }
 
 const employeeData = [
-    {
+  {
       "id": "33a7f853-8081-5c86-948f-cb02b36606db",
       "Name": "Polly Munoz",
       "Website": "http://babsihre.as/avoikoere",
@@ -28,13 +24,9 @@ const employeeData = [
       "City": "Osuozuse",
       "Country": "Reunion",
       "Company": "Hewlett-Packard Company",
-      "Position": "System Engineer",
-      "Updated on": "30/06/2023, 17:44:04",
-      "Created on": "20/08/2022",
-      "Is admin?": "no",
-      "Salary": "45,728$"
-    },
-    {
+      "Position": "System Engineer"
+  },
+  {
       "id": "16b8af4d-be37-5dc9-b1aa-1f6db1d49923",
       "Name": "Rebecca Stevenson",
       "Website": "http://mu.ng/bajatos",
@@ -45,13 +37,9 @@ const employeeData = [
       "City": "Nehmibwe",
       "Country": "Alland Islands",
       "Company": "Protective Life Corp",
-      "Position": "Meteorologist",
-      "Updated on": "01/07/2023, 08:42:05",
-      "Created on": "15/11/2022",
-      "Is admin?": "yes",
-      "Salary": "73,920$"
-    },
-    {
+      "Position": "Meteorologist"
+  },
+  {
       "id": "1a5c4605-d29a-5c4e-be14-6f53c7d734bc",
       "Name": "Della Ortega",
       "Website": "http://ofi.mo/gaptenev",
@@ -62,13 +50,9 @@ const employeeData = [
       "City": "Gurnatkuv",
       "Country": "Western Sahara",
       "Company": "Trans World Entertainment Corp.",
-      "Position": "Telecom Analyst",
-      "Updated on": "01/07/2023, 08:31:04",
-      "Created on": "10/05/2023",
-      "Is admin?": "yes",
-      "Salary": "77,923$"
-    },
-    {
+      "Position": "Telecom Analyst"
+  },
+  {
       "id": "18546bed-b2e5-5502-8157-acfc99096064",
       "Name": "Dale Myers",
       "Website": "http://cum.gi/niv",
@@ -79,13 +63,9 @@ const employeeData = [
       "City": "Durlitku",
       "Country": "British Virgin Islands",
       "Company": "Bed Bath & Beyond Inc.",
-      "Position": "Environmental Analyst",
-      "Updated on": "01/07/2023, 10:20:13",
-      "Created on": "13/04/2023",
-      "Is admin?": "no",
-      "Salary": "62,907$"
-    },
-    {
+      "Position": "Environmental Analyst"
+  },
+  {
       "id": "31f1b4d5-c332-5228-b914-20b44a847082",
       "Name": "Wesley Lowe",
       "Website": "http://litlap.rs/biron",
@@ -96,13 +76,9 @@ const employeeData = [
       "City": "Kihenban",
       "Country": "British Virgin Islands",
       "Company": "Dover Corporation, Inc.",
-      "Position": "Film Producer",
-      "Updated on": "30/06/2023, 23:25:45",
-      "Created on": "07/10/2022",
-      "Is admin?": "no",
-      "Salary": "47,945$"
-    },
-    {
+      "Position": "Film Producer"
+  },
+  {
       "id": "07d47653-a2cf-5650-b20a-db65d459fa2f",
       "Name": "Raymond Gross",
       "Website": "http://doba.gf/leozogo",
@@ -113,13 +89,9 @@ const employeeData = [
       "City": "Dipebim",
       "Country": "Isle of Man",
       "Company": "Delta Air Lines Inc.",
-      "Position": "Copyright Attorney",
-      "Updated on": "01/07/2023, 00:18:31",
-      "Created on": "20/11/2022",
-      "Is admin?": "yes",
-      "Salary": "35,672$"
-    },
-    {
+      "Position": "Copyright Attorney"
+  },
+  {
       "id": "6d61b112-b4dc-56df-be63-9b8398fa0f54",
       "Name": "Andrew Harper",
       "Website": "http://ip.no/zom",
@@ -130,13 +102,9 @@ const employeeData = [
       "City": "Pabopore",
       "Country": "Heard Island and McDonald Islands",
       "Company": "Riverwood Holding Inc.",
-      "Position": "Podiatrist",
-      "Updated on": "01/07/2023, 05:29:13",
-      "Created on": "30/03/2023",
-      "Is admin?": "no",
-      "Salary": "30,795$"
-    },
-    {
+      "Position": "Podiatrist"
+  },
+  {
       "id": "647bd856-8153-5879-aea8-121396658382",
       "Name": "Marion Harvey",
       "Website": "http://ese.ad/ki",
@@ -147,13 +115,9 @@ const employeeData = [
       "City": "Kihumbeg",
       "Country": "Niue",
       "Company": "Autoliv, Inc.",
-      "Position": "Author",
-      "Updated on": "01/07/2023, 11:16:07",
-      "Created on": "14/09/2022",
-      "Is admin?": "no",
-      "Salary": "68,747$"
-    },
-    {
+      "Position": "Author"
+  },
+  {
       "id": "0f431b26-5a3b-5a21-a45b-b1ead1ba55d6",
       "Name": "Abbie Stokes",
       "Website": "http://wuradu.cy/cirojji",
@@ -164,13 +128,9 @@ const employeeData = [
       "City": "Namofep",
       "Country": "Curacao",
       "Company": "Expeditors International of Washington Inc.",
-      "Position": "Hotel Manager",
-      "Updated on": "01/07/2023, 11:41:50",
-      "Created on": "27/04/2023",
-      "Is admin?": "no",
-      "Salary": "37,614$"
-    },
-    {
+      "Position": "Hotel Manager"
+  },
+  {
       "id": "114c4de0-8571-5889-9b36-43439b1eacbb",
       "Name": "Garrett Stanley",
       "Website": "http://obedafow.uz/gin",
@@ -181,13 +141,9 @@ const employeeData = [
       "City": "Homonoje",
       "Country": "Costa Rica",
       "Company": "FPL Group Inc.",
-      "Position": "Benefits Manager",
-      "Updated on": "30/06/2023, 23:04:37",
-      "Created on": "02/06/2023",
-      "Is admin?": "yes",
-      "Salary": "47,030$"
-    },
-    {
+      "Position": "Benefits Manager"
+  },
+  {
       "id": "dcc5f429-54f9-50f0-9a50-e23807e8856c",
       "Name": "Ronnie Armstrong",
       "Website": "http://dog.si/hiwusisu",
@@ -198,13 +154,9 @@ const employeeData = [
       "City": "Halifoke",
       "Country": "Vietnam",
       "Company": "FleetBoston Financial Co.",
-      "Position": "Publishing Director",
-      "Updated on": "30/06/2023, 19:52:46",
-      "Created on": "22/08/2022",
-      "Is admin?": "yes",
-      "Salary": "46,372$"
-    },
-    {
+      "Position": "Publishing Director"
+  },
+  {
       "id": "8cbb6bc0-4020-5e8a-a03b-bf6a67469bd2",
       "Name": "Theresa Nelson",
       "Website": "http://abfigza.su/foolak",
@@ -215,13 +167,9 @@ const employeeData = [
       "City": "Urhabe",
       "Country": "Kosovo",
       "Company": "Washington Post Co.",
-      "Position": "Soil Scientist",
-      "Updated on": "30/06/2023, 21:06:15",
-      "Created on": "23/09/2022",
-      "Is admin?": "yes",
-      "Salary": "62,670$"
-    },
-    {
+      "Position": "Soil Scientist"
+  },
+  {
       "id": "a86632b5-cbcb-59c3-84b4-ecd993d0a907",
       "Name": "Clifford Walton",
       "Website": "http://tagwu.ht/kuvucek",
@@ -232,13 +180,9 @@ const employeeData = [
       "City": "Todesani",
       "Country": "Georgia",
       "Company": "Hon Industries Inc.",
-      "Position": "Broker",
-      "Updated on": "01/07/2023, 13:49:20",
-      "Created on": "14/08/2022",
-      "Is admin?": "yes",
-      "Salary": "30,816$"
-    },
-    {
+      "Position": "Broker"
+  },
+  {
       "id": "a4900069-ad41-525d-93d0-027ae23c26e9",
       "Name": "Alan Spencer",
       "Website": "http://gu.ag/ajzornam",
@@ -249,13 +193,9 @@ const employeeData = [
       "City": "Bisulho",
       "Country": "Morocco",
       "Company": "Marshall & Ilsley Corporation",
-      "Position": "Producer",
-      "Updated on": "01/07/2023, 17:31:52",
-      "Created on": "01/01/2023",
-      "Is admin?": "no",
-      "Salary": "66,816$"
-    },
-    {
+      "Position": "Producer"
+  },
+  {
       "id": "8e38ecad-f205-51a9-b723-ec9dd0d1a09d",
       "Name": "Terry Rios",
       "Website": "http://deoj.na/bobba",
@@ -266,13 +206,9 @@ const employeeData = [
       "City": "Tifhabzun",
       "Country": "Vanuatu",
       "Company": "SunTrust Banks Inc",
-      "Position": "Grounds Keeper",
-      "Updated on": "30/06/2023, 22:30:30",
-      "Created on": "16/03/2023",
-      "Is admin?": "no",
-      "Salary": "76,549$"
-    },
-    {
+      "Position": "Grounds Keeper"
+  },
+  {
       "id": "ea803dc0-8c71-5991-a1fb-a0d9c943b376",
       "Name": "Harry Floyd",
       "Website": "http://damcu.gm/zo",
@@ -283,13 +219,9 @@ const employeeData = [
       "City": "Uwtanev",
       "Country": "United States",
       "Company": "Transocean Inc",
-      "Position": "System Administrator",
-      "Updated on": "01/07/2023, 12:25:35",
-      "Created on": "26/10/2022",
-      "Is admin?": "yes",
-      "Salary": "60,628$"
-    },
-    {
+      "Position": "System Administrator"
+  },
+  {
       "id": "c378f3e7-e422-581f-bee2-0d3e02b3a615",
       "Name": "Steve Snyder",
       "Website": "http://oseijnin.kz/do",
@@ -300,13 +232,9 @@ const employeeData = [
       "City": "Zozemeke",
       "Country": "Madagascar",
       "Company": "Conectiv, Inc",
-      "Position": "Sales Trainer",
-      "Updated on": "01/07/2023, 13:31:09",
-      "Created on": "27/03/2023",
-      "Is admin?": "yes",
-      "Salary": "66,868$"
-    },
-    {
+      "Position": "Sales Trainer"
+  },
+  {
       "id": "06709760-7d83-568f-9bf6-e1a375370839",
       "Name": "Ronnie Butler",
       "Website": "http://kuzjaej.ws/fi",
@@ -317,13 +245,9 @@ const employeeData = [
       "City": "Wiwgeje",
       "Country": "Burkina Faso",
       "Company": "Lennox International Inc.",
-      "Position": "Call Center Manager",
-      "Updated on": "01/07/2023, 05:32:57",
-      "Created on": "12/12/2022",
-      "Is admin?": "no",
-      "Salary": "76,383$"
-    },
-    {
+      "Position": "Call Center Manager"
+  },
+  {
       "id": "ab85c8d2-512a-528b-a4e1-2c88b4a58bc9",
       "Name": "Caroline Garner",
       "Website": "http://le.hr/tiz",
@@ -334,13 +258,9 @@ const employeeData = [
       "City": "Rasetrov",
       "Country": "Palau",
       "Company": "Premcor Inc.",
-      "Position": "Investment Manager",
-      "Updated on": "01/07/2023, 07:25:16",
-      "Created on": "12/12/2022",
-      "Is admin?": "no",
-      "Salary": "51,307$"
-    },
-    {
+      "Position": "Investment Manager"
+  },
+  {
       "id": "73b09e7c-b47c-5152-a65e-00fcbba030ad",
       "Name": "Alejandro Byrd",
       "Website": "http://cajmoadi.td/ludsacgi",
@@ -351,13 +271,9 @@ const employeeData = [
       "City": "Pizzepa",
       "Country": "Slovakia",
       "Company": "SPX Corp",
-      "Position": "Ship's Officer",
-      "Updated on": "01/07/2023, 14:20:39",
-      "Created on": "24/04/2023",
-      "Is admin?": "yes",
-      "Salary": "32,314$"
-    },
-    {
+      "Position": "Ship's Officer"
+  },
+  {
       "id": "a6a1321a-729f-57f7-8774-58e0810e0993",
       "Name": "Arthur Ortiz",
       "Website": "http://vutigiw.nu/zam",
@@ -368,13 +284,9 @@ const employeeData = [
       "City": "Fotosoc",
       "Country": "Libya",
       "Company": "Wm Wrigley Jr Company",
-      "Position": "Ceramic Engineer",
-      "Updated on": "01/07/2023, 10:48:42",
-      "Created on": "12/11/2022",
-      "Is admin?": "yes",
-      "Salary": "63,044$"
-    },
-    {
+      "Position": "Ceramic Engineer"
+  },
+  {
       "id": "d954f4d5-4764-52aa-a839-61dacc3185fb",
       "Name": "Harriet Miller",
       "Website": "http://efozu.dm/silja",
@@ -385,13 +297,9 @@ const employeeData = [
       "City": "Bozvojo",
       "Country": "Luxembourg",
       "Company": "International Paper Co.",
-      "Position": "Tour Guide Director",
-      "Updated on": "01/07/2023, 08:04:38",
-      "Created on": "17/08/2022",
-      "Is admin?": "no",
-      "Salary": "46,629$"
-    },
-    {
+      "Position": "Tour Guide Director"
+  },
+  {
       "id": "a6c56f89-8084-5014-be91-1bc5349b6ae3",
       "Name": "Evan Garner",
       "Website": "http://sa.tw/fic",
@@ -402,13 +310,9 @@ const employeeData = [
       "City": "Porhokdiz",
       "Country": "Netherlands",
       "Company": "Phar Mor Inc.",
-      "Position": "Mechanical Engineer",
-      "Updated on": "01/07/2023, 13:31:00",
-      "Created on": "30/12/2022",
-      "Is admin?": "no",
-      "Salary": "53,175$"
-    },
-    {
+      "Position": "Mechanical Engineer"
+  },
+  {
       "id": "0ef300fd-99e8-5eb5-bc52-bbde7d4788c6",
       "Name": "Paul Hammond",
       "Website": "http://rovji.mx/fidi",
@@ -419,13 +323,9 @@ const employeeData = [
       "City": "Mukoika",
       "Country": "Turkey",
       "Company": "Abercrombie & Fitch Co.",
-      "Position": "Redevelopment Specialist",
-      "Updated on": "01/07/2023, 11:17:13",
-      "Created on": "02/01/2023",
-      "Is admin?": "yes",
-      "Salary": "70,818$"
-    },
-    {
+      "Position": "Redevelopment Specialist"
+  },
+  {
       "id": "9b058b87-83a9-5bf0-8395-b59eeea262b4",
       "Name": "Isaac Carr",
       "Website": "http://macef.kg/javutihi",
@@ -436,13 +336,9 @@ const employeeData = [
       "City": "Apaparhe",
       "Country": "Oman",
       "Company": "WestPoint Stevens Inc",
-      "Position": "Underwriter",
-      "Updated on": "01/07/2023, 08:51:21",
-      "Created on": "18/09/2022",
-      "Is admin?": "no",
-      "Salary": "44,450$"
-    },
-    {
+      "Position": "Underwriter"
+  },
+  {
       "id": "bd32e1b8-ee8e-5468-9dc5-803b53987eb8",
       "Name": "Jessie Reed",
       "Website": "http://owal.lu/luho",
@@ -453,13 +349,9 @@ const employeeData = [
       "City": "Feheze",
       "Country": "Kuwait",
       "Company": "Ceridian Corp.",
-      "Position": "Mechanical Engineer",
-      "Updated on": "01/07/2023, 13:33:17",
-      "Created on": "26/02/2023",
-      "Is admin?": "no",
-      "Salary": "53,092$"
-    },
-    {
+      "Position": "Mechanical Engineer"
+  },
+  {
       "id": "b188841c-1f02-5f51-bdc1-72f5ef617d22",
       "Name": "Todd Ingram",
       "Website": "http://ke.uz/odife",
@@ -470,13 +362,9 @@ const employeeData = [
       "City": "Duzlaavi",
       "Country": "Antigua and Barbuda",
       "Company": "Hovnanian Enterprises Inc.",
-      "Position": "Mathematician",
-      "Updated on": "01/07/2023, 06:25:00",
-      "Created on": "22/07/2022",
-      "Is admin?": "no",
-      "Salary": "36,403$"
-    },
-    {
+      "Position": "Mathematician"
+  },
+  {
       "id": "9ecf7454-b8ad-5972-b353-b843f69c0e77",
       "Name": "Marcus Hodges",
       "Website": "http://micnum.io/nifo",
@@ -487,13 +375,9 @@ const employeeData = [
       "City": "Zidhoda",
       "Country": "France",
       "Company": "LSI Logic Corporation",
-      "Position": "Airline Pilot",
-      "Updated on": "01/07/2023, 14:34:07",
-      "Created on": "21/02/2023",
-      "Is admin?": "no",
-      "Salary": "75,240$"
-    },
-    {
+      "Position": "Airline Pilot"
+  },
+  {
       "id": "bb9ae15c-ebf7-5b76-a943-7a5d62805420",
       "Name": "Trevor Walton",
       "Website": "http://ute.gr/harevtil",
@@ -504,13 +388,9 @@ const employeeData = [
       "City": "Giwarus",
       "Country": "Chile",
       "Company": "Computer Associates International Inc.",
-      "Position": "International Acct.",
-      "Updated on": "01/07/2023, 10:59:45",
-      "Created on": "30/12/2022",
-      "Is admin?": "no",
-      "Salary": "55,095$"
-    },
-    {
+      "Position": "International Acct."
+  },
+  {
       "id": "b167c7b5-814e-5220-a12d-b014fec96d9d",
       "Name": "Raymond Bishop",
       "Website": "http://hif.am/udbom",
@@ -521,13 +401,9 @@ const employeeData = [
       "City": "Ozwonuz",
       "Country": "Isle of Man",
       "Company": "Agilent Technologies, Inc.",
-      "Position": "Joint Venture Manager",
-      "Updated on": "01/07/2023, 12:31:54",
-      "Created on": "07/09/2022",
-      "Is admin?": "yes",
-      "Salary": "48,903$"
-    },
-    {
+      "Position": "Joint Venture Manager"
+  },
+  {
       "id": "85a4785c-4b93-5d53-a6c1-ed6a50405a3d",
       "Name": "Alvin Wood",
       "Website": "http://zeibamaf.bm/pazutci",
@@ -538,13 +414,9 @@ const employeeData = [
       "City": "Vazninmaz",
       "Country": "Antarctica",
       "Company": "FirstEnergy Corp.",
-      "Position": "Environmental Specialist",
-      "Updated on": "30/06/2023, 22:11:20",
-      "Created on": "26/02/2023",
-      "Is admin?": "no",
-      "Salary": "41,642$"
-    },
-    {
+      "Position": "Environmental Specialist"
+  },
+  {
       "id": "fc80dc7d-3104-58c8-8b5b-503d8e86c055",
       "Name": "Alexander Garza",
       "Website": "http://umu.cn/ho",
@@ -555,13 +427,9 @@ const employeeData = [
       "City": "Comisvo",
       "Country": "Germany",
       "Company": "MGM Mirage",
-      "Position": "International Acct.",
-      "Updated on": "01/07/2023, 12:16:54",
-      "Created on": "19/11/2022",
-      "Is admin?": "no",
-      "Salary": "48,394$"
-    },
-    {
+      "Position": "International Acct."
+  },
+  {
       "id": "628654f8-f822-5ca6-96df-0a9afdf8c444",
       "Name": "Ivan Williams",
       "Website": "http://fifef.rw/vuzjig",
@@ -572,13 +440,9 @@ const employeeData = [
       "City": "Vudoneuke",
       "Country": "Guernsey",
       "Company": "Gateway Inc.",
-      "Position": "Network Administrator",
-      "Updated on": "30/06/2023, 20:09:17",
-      "Created on": "29/12/2022",
-      "Is admin?": "yes",
-      "Salary": "70,276$"
-    },
-    {
+      "Position": "Network Administrator"
+  },
+  {
       "id": "bdd6e3d4-7408-590f-8728-eaa4158a533f",
       "Name": "Lelia Paul",
       "Website": "http://rucehopes.yt/bobjevucu",
@@ -589,13 +453,9 @@ const employeeData = [
       "City": "Furahiri",
       "Country": "Mexico",
       "Company": "Golden West Financial Corporation",
-      "Position": "Investment Banker",
-      "Updated on": "01/07/2023, 04:28:15",
-      "Created on": "30/10/2022",
-      "Is admin?": "no",
-      "Salary": "30,183$"
-    },
-    {
+      "Position": "Investment Banker"
+  },
+  {
       "id": "f349f9e6-b8a2-5910-80bc-be9492be3228",
       "Name": "Adelaide Lyons",
       "Website": "http://sod.qa/mi",
@@ -606,13 +466,9 @@ const employeeData = [
       "City": "Nunhodap",
       "Country": "Burundi",
       "Company": "First Data Corp.",
-      "Position": "Entrepreneur",
-      "Updated on": "01/07/2023, 06:15:49",
-      "Created on": "07/08/2022",
-      "Is admin?": "no",
-      "Salary": "35,777$"
-    },
-    {
+      "Position": "Entrepreneur"
+  },
+  {
       "id": "5abfbf8a-a412-52b0-b4f1-62e00af94089",
       "Name": "Maude McBride",
       "Website": "http://dinavviz.ao/fakac",
@@ -623,13 +479,9 @@ const employeeData = [
       "City": "Mupkata",
       "Country": "Jordan",
       "Company": "Hibernia Corp.",
-      "Position": "Nursing Administrator",
-      "Updated on": "01/07/2023, 02:59:48",
-      "Created on": "24/01/2023",
-      "Is admin?": "no",
-      "Salary": "56,918$"
-    },
-    {
+      "Position": "Nursing Administrator"
+  },
+  {
       "id": "d9ffc309-09ee-55b6-bfad-cd9d1e6e9608",
       "Name": "Tyler Gonzalez",
       "Website": "http://mevvunez.as/uguwe",
@@ -640,13 +492,9 @@ const employeeData = [
       "City": "Japwizjuv",
       "Country": "South Africa",
       "Company": "Smithfield Foods Inc",
-      "Position": "Fraud Investigator",
-      "Updated on": "30/06/2023, 20:45:47",
-      "Created on": "13/05/2023",
-      "Is admin?": "yes",
-      "Salary": "35,822$"
-    },
-    {
+      "Position": "Fraud Investigator"
+  },
+  {
       "id": "e83701ec-fbd2-5f27-8ccd-b8e4bc92cddf",
       "Name": "Terry Torres",
       "Website": "http://wudta.pg/lusiv",
@@ -657,13 +505,9 @@ const employeeData = [
       "City": "Sikilig",
       "Country": "Vietnam",
       "Company": "Ross Stores Inc",
-      "Position": "Lead Software Engineer",
-      "Updated on": "01/07/2023, 13:13:37",
-      "Created on": "05/09/2022",
-      "Is admin?": "no",
-      "Salary": "57,978$"
-    },
-    {
+      "Position": "Lead Software Engineer"
+  },
+  {
       "id": "984079f2-1c7b-54c0-87f1-596c09367387",
       "Name": "Clifford Obrien",
       "Website": "http://ejko.ec/zoek",
@@ -674,13 +518,9 @@ const employeeData = [
       "City": "Afligjon",
       "Country": "Bhutan",
       "Company": "AutoZone, Inc.",
-      "Position": "Retail Store Manager",
-      "Updated on": "01/07/2023, 08:03:59",
-      "Created on": "29/08/2022",
-      "Is admin?": "yes",
-      "Salary": "42,825$"
-    },
-    {
+      "Position": "Retail Store Manager"
+  },
+  {
       "id": "c1d97a04-6641-59a2-b68b-6329b1574d14",
       "Name": "Nicholas Swanson",
       "Website": "http://im.gn/buzwoda",
@@ -691,13 +531,9 @@ const employeeData = [
       "City": "Siljogto",
       "Country": "Honduras",
       "Company": "Domino's Pizza LLC",
-      "Position": "Day Care Instructor",
-      "Updated on": "30/06/2023, 19:36:01",
-      "Created on": "02/05/2023",
-      "Is admin?": "no",
-      "Salary": "41,774$"
-    },
-    {
+      "Position": "Day Care Instructor"
+  },
+  {
       "id": "7007bba7-93cc-5d0a-b962-954e877f7355",
       "Name": "Nelle Drake",
       "Website": "http://wonad.cd/gateso",
@@ -708,13 +544,9 @@ const employeeData = [
       "City": "Kuzimim",
       "Country": "Palestine, State of",
       "Company": "Marathon Oil Corporation",
-      "Position": "Office Manager",
-      "Updated on": "30/06/2023, 23:04:23",
-      "Created on": "23/03/2023",
-      "Is admin?": "yes",
-      "Salary": "73,902$"
-    },
-    {
+      "Position": "Office Manager"
+  },
+  {
       "id": "4e5bc0c2-1f5c-5298-9ec9-a12e3457f8f8",
       "Name": "Anne Miles",
       "Website": "http://debegfit.gr/muj",
@@ -725,13 +557,9 @@ const employeeData = [
       "City": "Carjofuv",
       "Country": "Paraguay",
       "Company": "Continental Airlines Inc.",
-      "Position": "TV Programmer",
-      "Updated on": "01/07/2023, 14:21:11",
-      "Created on": "02/02/2023",
-      "Is admin?": "yes",
-      "Salary": "40,773$"
-    },
-    {
+      "Position": "TV Programmer"
+  },
+  {
       "id": "466d9e31-87dd-527b-bed7-37f273f950ee",
       "Name": "Corey Obrien",
       "Website": "http://vahap.ai/elegab",
@@ -742,13 +570,9 @@ const employeeData = [
       "City": "Pemukbe",
       "Country": "Tunisia",
       "Company": "PeopleSoft Inc",
-      "Position": "Political Analyst",
-      "Updated on": "01/07/2023, 14:18:42",
-      "Created on": "21/07/2022",
-      "Is admin?": "no",
-      "Salary": "75,934$"
-    },
-    {
+      "Position": "Political Analyst"
+  },
+  {
       "id": "3f4028c6-19bf-541c-aa5a-3711f76e849e",
       "Name": "Gene Lawson",
       "Website": "http://bin.gh/gooleeha",
@@ -759,13 +583,9 @@ const employeeData = [
       "City": "Anaboali",
       "Country": "Mali",
       "Company": "UST Inc",
-      "Position": "Broadcaster",
-      "Updated on": "30/06/2023, 20:03:05",
-      "Created on": "16/01/2023",
-      "Is admin?": "no",
-      "Salary": "58,230$"
-    },
-    {
+      "Position": "Broadcaster"
+  },
+  {
       "id": "1fbf5002-9fd0-5cf8-9f31-e7d783100dea",
       "Name": "Eva Hansen",
       "Website": "http://luphepno.va/pivi",
@@ -776,13 +596,9 @@ const employeeData = [
       "City": "Pitepgun",
       "Country": "Faroe Islands",
       "Company": "Brown-Forman Corporation",
-      "Position": "Compensation Analyst",
-      "Updated on": "01/07/2023, 08:06:23",
-      "Created on": "12/03/2023",
-      "Is admin?": "no",
-      "Salary": "72,758$"
-    },
-    {
+      "Position": "Compensation Analyst"
+  },
+  {
       "id": "b1277385-7032-550d-b09d-a88c63a889bd",
       "Name": "Danny Daniels",
       "Website": "http://joko.vi/tik",
@@ -793,13 +609,9 @@ const employeeData = [
       "City": "Ifjiraj",
       "Country": "Somalia",
       "Company": "Northern Trust Corporation",
-      "Position": "City Manager",
-      "Updated on": "01/07/2023, 16:20:37",
-      "Created on": "03/08/2022",
-      "Is admin?": "no",
-      "Salary": "75,020$"
-    },
-    {
+      "Position": "City Manager"
+  },
+  {
       "id": "89533814-04b4-55e0-882e-c66195c65c63",
       "Name": "Addie Rodriquez",
       "Website": "http://uwbanic.cr/kegsofiju",
@@ -810,13 +622,9 @@ const employeeData = [
       "City": "Obebucuf",
       "Country": "Kiribati",
       "Company": "Phoenix Companies Inc",
-      "Position": "Media Buyer",
-      "Updated on": "01/07/2023, 14:52:00",
-      "Created on": "15/05/2023",
-      "Is admin?": "yes",
-      "Salary": "31,999$"
-    },
-    {
+      "Position": "Media Buyer"
+  },
+  {
       "id": "211204d7-ddaa-5fb4-9ae8-7d59c46111c3",
       "Name": "Nelle Lee",
       "Website": "http://pur.qa/nufhueg",
@@ -827,13 +635,9 @@ const employeeData = [
       "City": "Piblugoke",
       "Country": "United Arab Emirates",
       "Company": "Champion Enterprises Inc.",
-      "Position": "Vendor Relations Director",
-      "Updated on": "01/07/2023, 07:06:21",
-      "Created on": "07/10/2022",
-      "Is admin?": "yes",
-      "Salary": "71,234$"
-    },
-    {
+      "Position": "Vendor Relations Director"
+  },
+  {
       "id": "cf673754-a32e-5b03-aca8-9f5491cd36e5",
       "Name": "Caleb Ramos",
       "Website": "http://le.gb/fiasbev",
@@ -844,13 +648,9 @@ const employeeData = [
       "City": "Gofjesjan",
       "Country": "Mauritius",
       "Company": "Visteon Corporation",
-      "Position": "Astronomer",
-      "Updated on": "01/07/2023, 06:04:51",
-      "Created on": "09/04/2023",
-      "Is admin?": "no",
-      "Salary": "67,923$"
-    },
-    {
+      "Position": "Astronomer"
+  },
+  {
       "id": "185cf2cd-e751-5fd9-81d7-18ff41c59440",
       "Name": "Victoria Malone",
       "Website": "http://potgi.aw/nuvgaoza",
@@ -861,13 +661,9 @@ const employeeData = [
       "City": "Pickesuki",
       "Country": "Austria",
       "Company": "Sovereign Bancorp Inc.",
-      "Position": "Air Traffic Controller",
-      "Updated on": "01/07/2023, 06:37:19",
-      "Created on": "30/12/2022",
-      "Is admin?": "no",
-      "Salary": "32,784$"
-    },
-    {
+      "Position": "Air Traffic Controller"
+  },
+  {
       "id": "3bf12da7-6cb0-5e71-a740-7fc4b39b2c13",
       "Name": "Elnora Ruiz",
       "Website": "http://evir.tg/lonojot",
@@ -878,13 +674,9 @@ const employeeData = [
       "City": "Wasobi",
       "Country": "French Southern Territories",
       "Company": "Pulte Homes Inc",
-      "Position": "Financier",
-      "Updated on": "30/06/2023, 22:08:08",
-      "Created on": "27/04/2023",
-      "Is admin?": "yes",
-      "Salary": "66,378$"
-    },
-    {
+      "Position": "Financier"
+  },
+  {
       "id": "1a1a4e5b-7878-5082-bceb-e8a3da855fb2",
       "Name": "Alma Gomez",
       "Website": "http://icupa.ae/zeb",
@@ -895,13 +687,9 @@ const employeeData = [
       "City": "Jelurto",
       "Country": "Netherlands",
       "Company": "General Cable Corporation",
-      "Position": "Information Director",
-      "Updated on": "01/07/2023, 05:42:14",
-      "Created on": "18/03/2023",
-      "Is admin?": "no",
-      "Salary": "56,813$"
-    },
-    {
+      "Position": "Information Director"
+  },
+  {
       "id": "ac17abaa-b6e4-59fb-91cc-232691f39019",
       "Name": "Maria Gutierrez",
       "Website": "http://tohinono.et/jebwon",
@@ -912,13 +700,9 @@ const employeeData = [
       "City": "Suegofic",
       "Country": "India",
       "Company": "Benchmark Electronics, Inc.",
-      "Position": "Photographer",
-      "Updated on": "01/07/2023, 17:09:29",
-      "Created on": "25/08/2022",
-      "Is admin?": "yes",
-      "Salary": "60,748$"
-    },
-    {
+      "Position": "Photographer"
+  },
+  {
       "id": "65ca554e-2a62-5fc5-9f32-a4a8bf8d8d4c",
       "Name": "Devin Fowler",
       "Website": "http://las.gq/narpeb",
@@ -929,13 +713,9 @@ const employeeData = [
       "City": "Kohudi",
       "Country": "Samoa",
       "Company": "Ohio Casualty Corp.",
-      "Position": "Horticulturist",
-      "Updated on": "01/07/2023, 11:51:27",
-      "Created on": "03/12/2022",
-      "Is admin?": "no",
-      "Salary": "33,607$"
-    },
-    {
+      "Position": "Horticulturist"
+  },
+  {
       "id": "cbc37c38-d4e1-5260-acc4-1856c09403c8",
       "Name": "Marie Santos",
       "Website": "http://gifhugu.kh/armuc",
@@ -946,13 +726,9 @@ const employeeData = [
       "City": "Wajojpeg",
       "Country": "United Republic of Tanzania",
       "Company": "Allegheny Energy, Inc.",
-      "Position": "Author",
-      "Updated on": "01/07/2023, 00:53:18",
-      "Created on": "11/09/2022",
-      "Is admin?": "no",
-      "Salary": "62,668$"
-    },
-    {
+      "Position": "Author"
+  },
+  {
       "id": "4d2599c4-8ae0-5d84-a393-517155e55898",
       "Name": "Barry Gregory",
       "Website": "http://wazpu.ba/fe",
@@ -963,13 +739,9 @@ const employeeData = [
       "City": "Cevehis",
       "Country": "Madagascar",
       "Company": "Emcor Group Inc.",
-      "Position": "Logistics Manager",
-      "Updated on": "01/07/2023, 16:23:23",
-      "Created on": "31/01/2023",
-      "Is admin?": "yes",
-      "Salary": "70,936$"
-    },
-    {
+      "Position": "Logistics Manager"
+  },
+  {
       "id": "312f665e-97a6-5c1b-87eb-d80673fbb5dc",
       "Name": "Lena Howell",
       "Website": "http://jobem.dm/caffaku",
@@ -980,13 +752,9 @@ const employeeData = [
       "City": "Dihomli",
       "Country": "Somalia",
       "Company": "Landstar System Inc.",
-      "Position": "Speech Pathologist",
-      "Updated on": "01/07/2023, 15:37:31",
-      "Created on": "17/01/2023",
-      "Is admin?": "yes",
-      "Salary": "55,128$"
-    },
-    {
+      "Position": "Speech Pathologist"
+  },
+  {
       "id": "80b0eeae-a3ed-599c-b488-8b2be482586d",
       "Name": "Dollie Morgan",
       "Website": "http://mosibwa.rs/ra",
@@ -997,13 +765,9 @@ const employeeData = [
       "City": "Wanonpo",
       "Country": "Egypt",
       "Company": "Fleetwood Enterprises Inc.",
-      "Position": "Building Manager",
-      "Updated on": "01/07/2023, 09:09:32",
-      "Created on": "24/12/2022",
-      "Is admin?": "yes",
-      "Salary": "77,784$"
-    },
-    {
+      "Position": "Building Manager"
+  },
+  {
       "id": "d6996daa-1d61-5e9b-a83e-45289c3d82c9",
       "Name": "Angel Larson",
       "Website": "http://abahicin.mt/leweos",
@@ -1014,13 +778,9 @@ const employeeData = [
       "City": "Legovun",
       "Country": "Bulgaria",
       "Company": "KLA-Tencor Corporation",
-      "Position": "Fashion Merchandiser",
-      "Updated on": "01/07/2023, 01:39:52",
-      "Created on": "03/08/2022",
-      "Is admin?": "no",
-      "Salary": "41,176$"
-    },
-    {
+      "Position": "Fashion Merchandiser"
+  },
+  {
       "id": "7828d6b3-3e56-589f-8bd6-9ad8df132554",
       "Name": "Roy Pittman",
       "Website": "http://tu.cu/reldiniga",
@@ -1031,13 +791,9 @@ const employeeData = [
       "City": "Dolsemhuw",
       "Country": "Hungary",
       "Company": "Phillips Van Heusen Corp.",
-      "Position": "Claims Manager",
-      "Updated on": "01/07/2023, 06:44:37",
-      "Created on": "21/01/2023",
-      "Is admin?": "yes",
-      "Salary": "56,515$"
-    },
-    {
+      "Position": "Claims Manager"
+  },
+  {
       "id": "aa42dbdc-1725-5722-88e2-005ab224d1b2",
       "Name": "Lou Hoffman",
       "Website": "http://pivak.sr/vaga",
@@ -1048,13 +804,9 @@ const employeeData = [
       "City": "Mopoku",
       "Country": "United Arab Emirates",
       "Company": "Avnet, Inc.",
-      "Position": "Quality Control Engineer",
-      "Updated on": "01/07/2023, 15:13:09",
-      "Created on": "01/10/2022",
-      "Is admin?": "yes",
-      "Salary": "49,256$"
-    },
-    {
+      "Position": "Quality Control Engineer"
+  },
+  {
       "id": "971b8139-5826-5775-bb0e-e07fbdf703fb",
       "Name": "Hannah Beck",
       "Website": "http://tewu.mn/gu",
@@ -1065,13 +817,9 @@ const employeeData = [
       "City": "Uzjodzev",
       "Country": "Zambia",
       "Company": "American Eagle Outfitters, Inc.",
-      "Position": "Employment Agent",
-      "Updated on": "01/07/2023, 03:15:22",
-      "Created on": "10/06/2023",
-      "Is admin?": "no",
-      "Salary": "53,510$"
-    },
-    {
+      "Position": "Employment Agent"
+  },
+  {
       "id": "2ed8217f-478f-5955-87fc-d08e008b5628",
       "Name": "Franklin Shelton",
       "Website": "http://eceter.gm/ipawebru",
@@ -1082,13 +830,9 @@ const employeeData = [
       "City": "Nojukuze",
       "Country": "Brazil",
       "Company": "Phillips Van Heusen Corp.",
-      "Position": "Cinematographer",
-      "Updated on": "01/07/2023, 16:40:51",
-      "Created on": "16/11/2022",
-      "Is admin?": "no",
-      "Salary": "48,940$"
-    },
-    {
+      "Position": "Cinematographer"
+  },
+  {
       "id": "d684f888-cd5a-55ba-a810-6ab328e7890c",
       "Name": "Maria Potter",
       "Website": "http://vihajoh.th/rawovku",
@@ -1099,13 +843,9 @@ const employeeData = [
       "City": "Ukacevan",
       "Country": "Japan",
       "Company": "La-Z-Boy Inc.",
-      "Position": "Dancer",
-      "Updated on": "01/07/2023, 16:17:16",
-      "Created on": "05/04/2023",
-      "Is admin?": "no",
-      "Salary": "56,154$"
-    },
-    {
+      "Position": "Dancer"
+  },
+  {
       "id": "26a46725-e81a-525c-a397-3bd857010e56",
       "Name": "Chris Andrews",
       "Website": "http://egheuf.nz/casdohuc",
@@ -1116,13 +856,9 @@ const employeeData = [
       "City": "Cocneigo",
       "Country": "Macao",
       "Company": "Constellation Emergy Group Inc.",
-      "Position": "Development Officer",
-      "Updated on": "01/07/2023, 04:27:00",
-      "Created on": "13/09/2022",
-      "Is admin?": "yes",
-      "Salary": "36,878$"
-    },
-    {
+      "Position": "Development Officer"
+  },
+  {
       "id": "ab1d7d4b-de0d-5c29-9347-b30bc7aacec7",
       "Name": "Madge Briggs",
       "Website": "http://nubati.dj/seji",
@@ -1133,13 +869,9 @@ const employeeData = [
       "City": "Uvarewja",
       "Country": "Lesotho",
       "Company": "Staples Inc",
-      "Position": "Nutritionist",
-      "Updated on": "01/07/2023, 07:53:06",
-      "Created on": "10/04/2023",
-      "Is admin?": "yes",
-      "Salary": "52,803$"
-    },
-    {
+      "Position": "Nutritionist"
+  },
+  {
       "id": "44730603-f1c6-53ac-9d5a-e6afbc7a6d29",
       "Name": "Louis Brewer",
       "Website": "http://muszokopu.ms/po",
@@ -1150,13 +882,9 @@ const employeeData = [
       "City": "Cibnelbi",
       "Country": "Saint Pierre and Miquelon",
       "Company": "Georgia-Pacific Corporation",
-      "Position": "Producer",
-      "Updated on": "01/07/2023, 07:20:04",
-      "Created on": "29/10/2022",
-      "Is admin?": "yes",
-      "Salary": "69,738$"
-    },
-    {
+      "Position": "Producer"
+  },
+  {
       "id": "fb6d4d84-2401-54f9-b771-a43956d292c3",
       "Name": "Julian Summers",
       "Website": "http://tib.sz/nehuget",
@@ -1167,13 +895,9 @@ const employeeData = [
       "City": "Wievoal",
       "Country": "Honduras",
       "Company": "Anheuser-Busch Companies, Inc.",
-      "Position": "Lead Software Engineer",
-      "Updated on": "01/07/2023, 08:37:42",
-      "Created on": "31/07/2022",
-      "Is admin?": "yes",
-      "Salary": "71,913$"
-    },
-    {
+      "Position": "Lead Software Engineer"
+  },
+  {
       "id": "5e8f35c4-1fc4-5ece-bf0c-0a6a09bd06ac",
       "Name": "Olive Kelley",
       "Website": "http://afor.pa/zovatber",
@@ -1184,13 +908,9 @@ const employeeData = [
       "City": "Wahimajal",
       "Country": "Turkmenistan",
       "Company": "Unisource Energy Corp",
-      "Position": "Executive Assistant",
-      "Updated on": "01/07/2023, 05:27:52",
-      "Created on": "25/08/2022",
-      "Is admin?": "yes",
-      "Salary": "48,576$"
-    },
-    {
+      "Position": "Executive Assistant"
+  },
+  {
       "id": "1d2ef889-767a-5e7c-b893-4284ce22d8e4",
       "Name": "Adele Joseph",
       "Website": "http://samre.bb/adihega",
@@ -1201,13 +921,9 @@ const employeeData = [
       "City": "Haonula",
       "Country": "Cocos (Keeling) Islands",
       "Company": "Magellan Health Services Inc.",
-      "Position": "EEO Compliance Manager",
-      "Updated on": "01/07/2023, 16:12:14",
-      "Created on": "16/10/2022",
-      "Is admin?": "no",
-      "Salary": "75,845$"
-    },
-    {
+      "Position": "EEO Compliance Manager"
+  },
+  {
       "id": "f4a3363c-bfa4-5ed1-8090-28afb24f0df0",
       "Name": "Helena Sullivan",
       "Website": "http://zu.lc/katfa",
@@ -1218,13 +934,9 @@ const employeeData = [
       "City": "Jimavka",
       "Country": "United Kingdom",
       "Company": "Zions Bancorporation",
-      "Position": "Gourmet Chef",
-      "Updated on": "01/07/2023, 12:59:16",
-      "Created on": "17/01/2023",
-      "Is admin?": "no",
-      "Salary": "32,822$"
-    },
-    {
+      "Position": "Gourmet Chef"
+  },
+  {
       "id": "9ed49ee6-bbca-557f-88e6-44a09b97889d",
       "Name": "Alejandro Wells",
       "Website": "http://cauce.bd/mi",
@@ -1235,13 +947,9 @@ const employeeData = [
       "City": "Kuritpit",
       "Country": "Panama",
       "Company": "Great Lakes Chemical Corporation",
-      "Position": "Management Consultant",
-      "Updated on": "01/07/2023, 10:51:44",
-      "Created on": "04/10/2022",
-      "Is admin?": "yes",
-      "Salary": "70,580$"
-    },
-    {
+      "Position": "Management Consultant"
+  },
+  {
       "id": "20b76ea4-fe38-5912-94e4-5004203824f3",
       "Name": "Claudia Scott",
       "Website": "http://pepow.kw/rowace",
@@ -1252,13 +960,9 @@ const employeeData = [
       "City": "Ifzusi",
       "Country": "Belize",
       "Company": "Airgas, Inc.",
-      "Position": "Mechanic",
-      "Updated on": "01/07/2023, 09:36:48",
-      "Created on": "17/11/2022",
-      "Is admin?": "no",
-      "Salary": "52,375$"
-    },
-    {
+      "Position": "Mechanic"
+  },
+  {
       "id": "a50e5fed-0d91-5c47-bad1-2236c37c1a33",
       "Name": "Gavin Jimenez",
       "Website": "http://zahafvaj.nr/ruj",
@@ -1269,13 +973,9 @@ const employeeData = [
       "City": "Supebdor",
       "Country": "Saint Helena",
       "Company": "Interpublic Group of Companies Inc.",
-      "Position": "Joint Venture Manager",
-      "Updated on": "01/07/2023, 14:13:45",
-      "Created on": "18/11/2022",
-      "Is admin?": "yes",
-      "Salary": "33,281$"
-    },
-    {
+      "Position": "Joint Venture Manager"
+  },
+  {
       "id": "b8bf9eba-1628-5af0-931b-5fd7a2fedf70",
       "Name": "Rhoda Jimenez",
       "Website": "http://fahre.to/ejo",
@@ -1286,13 +986,9 @@ const employeeData = [
       "City": "Gawwepo",
       "Country": "Sao Tome and Principe",
       "Company": "Charter Communications Inc.",
-      "Position": "Ship's Officer",
-      "Updated on": "01/07/2023, 02:47:16",
-      "Created on": "15/04/2023",
-      "Is admin?": "no",
-      "Salary": "63,474$"
-    },
-    {
+      "Position": "Ship's Officer"
+  },
+  {
       "id": "4eda5870-5e08-5ab8-a630-1333d2e4e7d1",
       "Name": "Tyler Vega",
       "Website": "http://vovu.bd/bo",
@@ -1303,13 +999,9 @@ const employeeData = [
       "City": "Kulparluj",
       "Country": "Pitcairn",
       "Company": "Encompass Services Corporation",
-      "Position": "Economist",
-      "Updated on": "01/07/2023, 10:37:51",
-      "Created on": "16/01/2023",
-      "Is admin?": "yes",
-      "Salary": "74,541$"
-    },
-    {
+      "Position": "Economist"
+  },
+  {
       "id": "02b91226-9832-5d8b-a5ea-4a8b724d765c",
       "Name": "Max Santiago",
       "Website": "http://patja.jp/anu",
@@ -1320,13 +1012,9 @@ const employeeData = [
       "City": "Urufidden",
       "Country": "Wallis and Futuna",
       "Company": "Steelcase Inc",
-      "Position": "PR Specialist",
-      "Updated on": "01/07/2023, 15:53:33",
-      "Created on": "03/10/2022",
-      "Is admin?": "yes",
-      "Salary": "52,175$"
-    },
-    {
+      "Position": "PR Specialist"
+  },
+  {
       "id": "66efe951-530c-5ae2-87f5-faa688dfb4b4",
       "Name": "Glenn Olson",
       "Website": "http://ru.sj/cizrar",
@@ -1337,13 +1025,9 @@ const employeeData = [
       "City": "Fobija",
       "Country": "Azerbaijan",
       "Company": "Bausch & Lomb Incorporated",
-      "Position": "Technical Illustrator",
-      "Updated on": "30/06/2023, 21:11:33",
-      "Created on": "21/06/2023",
-      "Is admin?": "no",
-      "Salary": "60,166$"
-    },
-    {
+      "Position": "Technical Illustrator"
+  },
+  {
       "id": "2eedb689-3748-5be4-8e6c-6fff5f5981db",
       "Name": "Derrick Mann",
       "Website": "http://voffanuv.am/kic",
@@ -1354,13 +1038,9 @@ const employeeData = [
       "City": "Piolep",
       "Country": "Equatorial Guinea",
       "Company": "Stater Bros. Holdings Inc.",
-      "Position": "Cryptologist",
-      "Updated on": "01/07/2023, 12:36:59",
-      "Created on": "16/03/2023",
-      "Is admin?": "no",
-      "Salary": "56,638$"
-    },
-    {
+      "Position": "Cryptologist"
+  },
+  {
       "id": "47d91d2c-ac75-5316-ad64-dc7ae9bedd3b",
       "Name": "Alberta Oliver",
       "Website": "http://zemcuzse.ru/tud",
@@ -1371,13 +1051,9 @@ const employeeData = [
       "City": "Pishelju",
       "Country": "Andorra",
       "Company": "Stein Mart Inc",
-      "Position": "Ceramic Engineer",
-      "Updated on": "30/06/2023, 22:53:01",
-      "Created on": "02/07/2022",
-      "Is admin?": "yes",
-      "Salary": "54,949$"
-    },
-    {
+      "Position": "Ceramic Engineer"
+  },
+  {
       "id": "7e6aff3a-e67d-57d8-844b-9f8a16a6cd89",
       "Name": "Joe Wood",
       "Website": "http://tapruk.ls/igacatij",
@@ -1388,13 +1064,9 @@ const employeeData = [
       "City": "Elogivik",
       "Country": "French Guiana",
       "Company": "Scientific-Atlanta Inc",
-      "Position": "Occupational Therapist",
-      "Updated on": "01/07/2023, 16:23:29",
-      "Created on": "02/06/2023",
-      "Is admin?": "yes",
-      "Salary": "38,194$"
-    },
-    {
+      "Position": "Occupational Therapist"
+  },
+  {
       "id": "f86221f6-a6ee-52f0-b576-92ee4bd77cbe",
       "Name": "Emilie Hunter",
       "Website": "http://tekwir.gy/me",
@@ -1405,13 +1077,9 @@ const employeeData = [
       "City": "Vocubi",
       "Country": "Croatia",
       "Company": "Sun Microsystems Inc.",
-      "Position": "Investment Manager",
-      "Updated on": "01/07/2023, 05:55:49",
-      "Created on": "21/05/2023",
-      "Is admin?": "yes",
-      "Salary": "75,242$"
-    },
-    {
+      "Position": "Investment Manager"
+  },
+  {
       "id": "ec3c7cd0-919f-5669-b0b1-ceddbb1c1686",
       "Name": "Gerald Henry",
       "Website": "http://ojidozud.gd/cu",
@@ -1422,13 +1090,9 @@ const employeeData = [
       "City": "Hopabma",
       "Country": "Liberia",
       "Company": "Granite Construction Incorporated",
-      "Position": "Politician",
-      "Updated on": "01/07/2023, 05:04:10",
-      "Created on": "17/05/2023",
-      "Is admin?": "no",
-      "Salary": "52,788$"
-    },
-    {
+      "Position": "Politician"
+  },
+  {
       "id": "37793dd8-f03f-539c-b87e-e7a166d47aa3",
       "Name": "Sarah Perkins",
       "Website": "http://pawbuz.pf/jumwi",
@@ -1439,13 +1103,9 @@ const employeeData = [
       "City": "Ilcelvom",
       "Country": "Peru",
       "Company": "United Stationers Inc",
-      "Position": "University Administrator",
-      "Updated on": "01/07/2023, 02:45:39",
-      "Created on": "22/08/2022",
-      "Is admin?": "yes",
-      "Salary": "54,771$"
-    },
-    {
+      "Position": "University Administrator"
+  },
+  {
       "id": "4d2804ea-baef-5824-9eae-9133bdba516d",
       "Name": "Amanda Robbins",
       "Website": "http://ku.bh/lased",
@@ -1456,13 +1116,9 @@ const employeeData = [
       "City": "Zumlebew",
       "Country": "Slovakia",
       "Company": "UnumProvident Corporation",
-      "Position": "Treasurer",
-      "Updated on": "30/06/2023, 20:30:29",
-      "Created on": "21/03/2023",
-      "Is admin?": "no",
-      "Salary": "59,961$"
-    },
-    {
+      "Position": "Treasurer"
+  },
+  {
       "id": "0cf7ae44-04eb-5aa6-a466-132c003e9964",
       "Name": "Emma Newman",
       "Website": "http://hum.kr/mahazo",
@@ -1473,13 +1129,9 @@ const employeeData = [
       "City": "Gifizfem",
       "Country": "French Southern Territories",
       "Company": "Hub Group Inc.",
-      "Position": "Library Manager",
-      "Updated on": "30/06/2023, 18:11:22",
-      "Created on": "19/07/2022",
-      "Is admin?": "yes",
-      "Salary": "47,689$"
-    },
-    {
+      "Position": "Library Manager"
+  },
+  {
       "id": "0bd399ca-6e88-5964-8662-c1a48d4a3551",
       "Name": "Joshua Fisher",
       "Website": "http://wimmojwit.kg/lekokuj",
@@ -1490,13 +1142,9 @@ const employeeData = [
       "City": "Hagwiwhe",
       "Country": "Greenland",
       "Company": "ONEOK Inc",
-      "Position": "Baker",
-      "Updated on": "01/07/2023, 15:06:03",
-      "Created on": "09/09/2022",
-      "Is admin?": "yes",
-      "Salary": "67,226$"
-    },
-    {
+      "Position": "Baker"
+  },
+  {
       "id": "f7e64874-9417-5869-8c11-a07f538db94c",
       "Name": "Dennis Sanchez",
       "Website": "http://ulir.ni/heizo",
@@ -1507,13 +1155,9 @@ const employeeData = [
       "City": "Bigedijib",
       "Country": "Barbados",
       "Company": "Kroger Co.",
-      "Position": "Mechanical Engineer",
-      "Updated on": "01/07/2023, 14:18:33",
-      "Created on": "04/11/2022",
-      "Is admin?": "no",
-      "Salary": "40,509$"
-    },
-    {
+      "Position": "Mechanical Engineer"
+  },
+  {
       "id": "b3f06dde-0188-565b-ad36-f8c75fd85f73",
       "Name": "Brent Schmidt",
       "Website": "http://ubazepdi.com/detojob",
@@ -1524,13 +1168,9 @@ const employeeData = [
       "City": "Vekhoni",
       "Country": "Timor-Leste",
       "Company": "Wellpoint Health Networks Inc",
-      "Position": "Project Engineer",
-      "Updated on": "01/07/2023, 02:22:02",
-      "Created on": "18/08/2022",
-      "Is admin?": "no",
-      "Salary": "79,121$"
-    },
-    {
+      "Position": "Project Engineer"
+  },
+  {
       "id": "57ec9685-725d-5aeb-99f6-740d0d541953",
       "Name": "Sallie Hines",
       "Website": "http://iwsirjaj.sa/weco",
@@ -1541,13 +1181,9 @@ const employeeData = [
       "City": "Jiezvo",
       "Country": "Costa Rica",
       "Company": "Hormel Foods Corp.",
-      "Position": "Home Economist",
-      "Updated on": "01/07/2023, 04:39:09",
-      "Created on": "07/04/2023",
-      "Is admin?": "no",
-      "Salary": "37,356$"
-    },
-    {
+      "Position": "Home Economist"
+  },
+  {
       "id": "7da226fc-72ce-58c0-9411-87d334de2a7e",
       "Name": "Jane Haynes",
       "Website": "http://ohi.bg/jigesu",
@@ -1558,13 +1194,9 @@ const employeeData = [
       "City": "Vacsivjos",
       "Country": "Venezuela",
       "Company": "Allegheny Energy, Inc.",
-      "Position": "Statistician",
-      "Updated on": "30/06/2023, 21:03:50",
-      "Created on": "18/11/2022",
-      "Is admin?": "yes",
-      "Salary": "38,081$"
-    },
-    {
+      "Position": "Statistician"
+  },
+  {
       "id": "21417e52-f490-52a7-8a4d-5b76c6755ed5",
       "Name": "Calvin Ellis",
       "Website": "http://dup.cd/hubvocik",
@@ -1575,13 +1207,9 @@ const employeeData = [
       "City": "Zumato",
       "Country": "Wallis and Futuna",
       "Company": "Hilton Hotels Corp.",
-      "Position": "Patent Attorney",
-      "Updated on": "01/07/2023, 12:21:37",
-      "Created on": "02/09/2022",
-      "Is admin?": "yes",
-      "Salary": "60,133$"
-    },
-    {
+      "Position": "Patent Attorney"
+  },
+  {
       "id": "48ba4905-3073-5c22-b868-ecdea214a88f",
       "Name": "Alexander Curry",
       "Website": "http://iw.nc/ru",
@@ -1592,13 +1220,9 @@ const employeeData = [
       "City": "Lissimri",
       "Country": "British Virgin Islands",
       "Company": "Toro Company",
-      "Position": "Professional Athlete",
-      "Updated on": "01/07/2023, 05:32:26",
-      "Created on": "20/04/2023",
-      "Is admin?": "yes",
-      "Salary": "65,327$"
-    },
-    {
+      "Position": "Professional Athlete"
+  },
+  {
       "id": "1c83b4bc-85d5-589b-b4cd-76a79dabe883",
       "Name": "Isabelle Drake",
       "Website": "http://lijsanar.uy/sakahiv",
@@ -1609,13 +1233,9 @@ const employeeData = [
       "City": "Habutdis",
       "Country": "Saint Kitts and Nevis",
       "Company": "American Axle & Manufacturing Holdings, Inc.",
-      "Position": "Publisher",
-      "Updated on": "01/07/2023, 07:10:32",
-      "Created on": "23/10/2022",
-      "Is admin?": "yes",
-      "Salary": "74,129$"
-    },
-    {
+      "Position": "Publisher"
+  },
+  {
       "id": "f11fab75-3fdb-5b69-ac90-47d22403e4ee",
       "Name": "Ora Hines",
       "Website": "http://meem.me/or",
@@ -1626,13 +1246,9 @@ const employeeData = [
       "City": "Maliru",
       "Country": "Peru",
       "Company": "MeadWestvaco Corporation",
-      "Position": "Oceanographer",
-      "Updated on": "30/06/2023, 22:42:44",
-      "Created on": "06/07/2022",
-      "Is admin?": "no",
-      "Salary": "45,823$"
-    },
-    {
+      "Position": "Oceanographer"
+  },
+  {
       "id": "3f064097-8d76-5cb4-88a0-155e73ba5d70",
       "Name": "Rachel Chavez",
       "Website": "http://pazhe.bh/sa",
@@ -1643,13 +1259,9 @@ const employeeData = [
       "City": "Gizeha",
       "Country": "Seychelles",
       "Company": "Georgia Gulf Corporation",
-      "Position": "Dietitian",
-      "Updated on": "30/06/2023, 19:23:29",
-      "Created on": "29/12/2022",
-      "Is admin?": "no",
-      "Salary": "74,605$"
-    },
-    {
+      "Position": "Dietitian"
+  },
+  {
       "id": "fd80460b-08b1-5bfc-a6ab-b0adc9172d56",
       "Name": "Jay Sutton",
       "Website": "http://odelapeg.fj/ofo",
@@ -1660,13 +1272,9 @@ const employeeData = [
       "City": "Irisuru",
       "Country": "Malawi",
       "Company": "Equity Office Properties Trust",
-      "Position": "Biotechnical Researcher",
-      "Updated on": "01/07/2023, 03:31:50",
-      "Created on": "24/04/2023",
-      "Is admin?": "yes",
-      "Salary": "67,887$"
-    },
-    {
+      "Position": "Biotechnical Researcher"
+  },
+  {
       "id": "5335d1ec-78eb-567d-8e41-f6c983000d99",
       "Name": "Cory Robbins",
       "Website": "http://du.ad/toga",
@@ -1677,13 +1285,9 @@ const employeeData = [
       "City": "Buwohsoz",
       "Country": "Bahamas",
       "Company": "FleetBoston Financial Co.",
-      "Position": "Optometrist",
-      "Updated on": "01/07/2023, 15:20:45",
-      "Created on": "20/01/2023",
-      "Is admin?": "yes",
-      "Salary": "57,336$"
-    },
-    {
+      "Position": "Optometrist"
+  },
+  {
       "id": "2ed9cfb1-76f2-5088-bb5b-66d9b3538060",
       "Name": "Lenora Gibbs",
       "Website": "http://bevci.vc/ollo",
@@ -1694,13 +1298,9 @@ const employeeData = [
       "City": "Wanokur",
       "Country": "Latvia",
       "Company": "Value City Department Stores Inc",
-      "Position": "Optical Technician",
-      "Updated on": "30/06/2023, 17:54:32",
-      "Created on": "25/12/2022",
-      "Is admin?": "no",
-      "Salary": "57,311$"
-    },
-    {
+      "Position": "Optical Technician"
+  },
+  {
       "id": "48c3b8bc-dfe7-50fd-b732-cc574a95ebb6",
       "Name": "Mildred Atkins",
       "Website": "http://obob.ae/ezioto",
@@ -1711,12 +1311,8 @@ const employeeData = [
       "City": "Uzdedla",
       "Country": "Holy See (Vatican City State)",
       "Company": "GreenPoint Financial Corp.",
-      "Position": "Communications Affairs Director",
-      "Updated on": "01/07/2023, 02:14:09",
-      "Created on": "27/06/2023",
-      "Is admin?": "yes",
-      "Salary": "32,601$"
-    }
-  ];
+      "Position": "Communications Affairs Director"
+  }
+]
 
-  export default employeeData;
+export default employeeData;
