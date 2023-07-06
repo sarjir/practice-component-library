@@ -36,4 +36,12 @@ test("Should allow filtering of which columns to display", async () => {
   });
 
   expect(screen.queryAllByRole("checkbox").length).toBe(11);
+
+  expect(screen.getByRole("columnheader", { name: "id" })).toBeInTheDocument();
+  userEvent.click(screen.getByRole("checkbox", { name: "id" }));
+  await waitFor(() => {
+    expect(
+      screen.queryByRole("columnheader", { name: "id" })
+    ).not.toBeInTheDocument();
+  });
 });

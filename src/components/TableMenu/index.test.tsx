@@ -3,8 +3,16 @@ import userEvent from "@testing-library/user-event";
 import TableHeader from "./";
 
 const mockedMenuItems = ["id", "name"];
+const mockToggleVisibility = jest.fn();
+
 test("TableHeader renders", async () => {
-  render(<TableHeader menuItems={mockedMenuItems} />);
+  render(
+    <TableHeader
+      activeColumns={["id"]}
+      menuItems={mockedMenuItems}
+      toggleColumnVisibility={mockToggleVisibility}
+    />
+  );
 
   expect(
     screen.getByRole("button", { name: "||| COLUMNS" })
@@ -18,13 +26,27 @@ test("TableHeader renders", async () => {
   });
 });
 
-test("Toggles visibility of menu", async () => {
-  render(<TableHeader menuItems={mockedMenuItems} />);
+test("Toggles visibility of menu and allows for filtering", async () => {
+  render(
+    <TableHeader
+      activeColumns={["id"]}
+      menuItems={mockedMenuItems}
+      toggleColumnVisibility={mockToggleVisibility}
+    />
+  );
   expect(screen.queryByRole("menu")).not.toBeInTheDocument();
 
   userEvent.click(screen.getByRole("button", { name: "||| COLUMNS" }));
   await waitFor(() => {
     expect(screen.getByRole("menu")).toBeInTheDocument();
+  });
+
+  expect(screen.getByRole("checkbox", { name: "id" })).toBeChecked();
+
+  expect(mockToggleVisibility).not.toHaveBeenCalled();
+  userEvent.click(screen.getByRole("checkbox", { name: "id" }));
+  await waitFor(() => {
+    expect(mockToggleVisibility).toBeCalledTimes(1);
   });
 
   userEvent.click(screen.getByRole("button", { name: "||| COLUMNS" }));
