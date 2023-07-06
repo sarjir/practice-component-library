@@ -1,13 +1,9 @@
 import React, { useState } from "react";
-import EmployeeRow from "../EmployeeRow";
-import Row from "../Row";
-import EmployeeTableHeader from "../EmployeeTableHeader";
-import employeeData, { EmployeeData } from "../../data";
-import styles from "./table.module.css";
 import TableMenu from "../TableMenu";
+import Table from "../Table";
 
 interface HasId {
-  [key: string]: string | number; // Is this negating what I want to achieve?
+  [key: string]: string | number; // Is this negating what I want to achieve? Does this open up my type to allow more than what I want?
   id: string;
 }
 
@@ -31,20 +27,7 @@ function FilterableTable<Type extends HasId>({
   return (
     <>
       <TableMenu menuItems={columns} />
-      <table className={styles.table}>
-        <EmployeeTableHeader items={columns} />
-        <tbody>
-          {data.map((item) => {
-            return (
-              <Row
-                key={`row-${item.id}`}
-                id={item.id}
-                cellValues={columns.map((column) => item[column])}
-              />
-            );
-          })}
-        </tbody>
-      </table>
+      <Table<Type> data={data} columns={columns} />
     </>
   );
 }
