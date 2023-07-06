@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import TableMenu from "../TableMenu";
 import Table from "../Table";
+import { useActiveColumns } from "./useActiveColumns";
 
 /**
  * What state do I have?
@@ -25,22 +26,7 @@ function FilterableTable<Type extends HasId>({
 }: Props<Type>): JSX.Element {
   const [firstElement] = data;
   const columns = Object.keys(firstElement);
-
-  const [activeColumns, updateActiveColumns] = useState(columns);
-  const handleActiveColumns = (column: string): void => {
-    activeColumns.includes(column)
-      ? updateActiveColumns(removeItemFromArray(activeColumns, column))
-      : updateActiveColumns([...activeColumns, column]);
-  };
-
-  const removeItemFromArray = (
-    array: string[],
-    itemToRemove: string
-  ): string[] => {
-    const index = array.indexOf(itemToRemove);
-
-    return [...array.slice(0, index), ...array.slice(index + 1)];
-  };
+  const [activeColumns, handleActiveColumns] = useActiveColumns(columns);
 
   return (
     <>
