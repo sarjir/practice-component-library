@@ -1,7 +1,16 @@
-import { useState } from "react";
+// @ts-nocheck
+// FIXME: Remove this 👆
 
-export function useActiveColumns(originalState: string[]): [string[], (column: string) => void ] {
-  const [activeColumns, updateActiveColumns] = useState(originalState);
+import { useState } from "react";
+import { ColDef } from ".";
+
+type State<RowType> = {
+  originalState: ColDef<RowType>[]
+}
+
+export function useActiveColumns<RowType>(originalState: ColDef<RowType>[]): [string[], (column: string) => void ] {
+  const columnNames = originalState.map((column) => column.field)
+  const [activeColumns, updateActiveColumns] = useState(columnNames);
 
   const handleActiveColumns = (column: string): void => {
     activeColumns.includes(column)

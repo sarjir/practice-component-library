@@ -1,10 +1,59 @@
 import { render, screen, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import FilterableTable from "./index";
-import employeeData from "../../data";
+import employeeData, { EmployeeData } from "../../data";
+
+const columns = [
+  {
+    field: "id",
+    displayName: "ID",
+  },
+  {
+    field: "Name",
+    displayName: "Employee name",
+  },
+  {
+    field: "Website",
+    displayName: "Website",
+  },
+  {
+    field: "Rating",
+    displayName: "Rating",
+  },
+  {
+    field: "Email",
+    displayName: "Email",
+  },
+  {
+    field: "Phone",
+    displayName: "Phone",
+  },
+  {
+    field: "Username",
+    displayName: "Username",
+  },
+  {
+    field: "City",
+    displayName: "City",
+  },
+  {
+    field: "Country",
+    displayName: "Country",
+  },
+  {
+    field: "Company",
+    displayName: "Company",
+  },
+  {
+    field: "Position",
+    displayName: "Position",
+  },
+];
 
 test("Table component should render", () => {
-  render(<FilterableTable data={employeeData} />);
+  render(
+    <FilterableTable<EmployeeData> rows={employeeData} columns={columns} />
+  );
 
   expect(screen.getAllByRole("row")).toHaveLength(100 + 1);
   expect(screen.getByText("Alan Spencer")).toBeInTheDocument();
@@ -25,7 +74,7 @@ test("Table component should render", () => {
 });
 
 test("Should allow filtering of which columns to display", async () => {
-  render(<FilterableTable data={employeeData} />);
+  render(<FilterableTable rows={employeeData} columns={columns} />);
 
   expect(screen.getByRole("button", { name: "||| COLUMNS" }));
   expect(screen.queryByRole("menu")).not.toBeInTheDocument();
@@ -37,11 +86,11 @@ test("Should allow filtering of which columns to display", async () => {
 
   expect(screen.queryAllByRole("checkbox").length).toBe(11);
 
-  expect(screen.getByRole("columnheader", { name: "id" })).toBeInTheDocument();
-  userEvent.click(screen.getByRole("checkbox", { name: "id" }));
+  expect(screen.getByRole("columnheader", { name: "ID" })).toBeInTheDocument();
+  userEvent.click(screen.getByRole("checkbox", { name: "ID" }));
   await waitFor(() => {
     expect(
-      screen.queryByRole("columnheader", { name: "id" })
+      screen.queryByRole("columnheader", { name: "ID" })
     ).not.toBeInTheDocument();
   });
 });

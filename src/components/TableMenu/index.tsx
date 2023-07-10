@@ -1,40 +1,47 @@
 import { MouseEventHandler, SyntheticEvent, useState } from "react";
+import { ColDef } from "../FilterableTable";
 
-type Props = {
-  menuItems: string[];
+type Props<RowType> = {
+  // menuItems: string[];
+  menuItems: ColDef<RowType>[];
   toggleColumnVisibility: (column: string) => void;
   activeColumns: string[];
 };
 
-function TableMenu({
+function TableMenu<RowType>({
   menuItems,
   activeColumns = [],
   toggleColumnVisibility,
-}: Props) {
+}: Props<RowType>) {
   const [editMenuVisibility, setEditMenuVisibility] = useState(false);
 
   const handleEditColumnsClick = () => {
     setEditMenuVisibility((prev) => !prev);
   };
 
-  const handleCheckboxClick = (key: string) => {
-    toggleColumnVisibility(key);
+  const handleCheckboxClick = (key: RowType[keyof RowType]) => {
+    console.log("key", key);
+    toggleColumnVisibility(key as string);
   };
+
+  console.log("menuItems", menuItems);
 
   return (
     <div>
       <button onClick={handleEditColumnsClick}>||| COLUMNS</button>
       {editMenuVisibility && (
         <div role="menu">
-          {menuItems.map((key) => (
-            <span key={key}>
+          {menuItems.map((item) => (
+            <span key={`checkbox-${item.field}`}>
               <input
-                onChange={() => handleCheckboxClick(key)}
-                checked={activeColumns.includes(key)}
-                id={`${key}ColumnCheckbox`}
+                onChange={() => handleCheckboxClick(item.field)}
+                checked={activeColumns.includes(String(item.field))}
+                id={`${item.field}ColumnCheckbox`}
                 type="checkbox"
               />
-              <label htmlFor={`${key}ColumnCheckbox`}>{key}</label>
+              <label htmlFor={`${item.field}ColumnCheckbox`}>
+                {item.displayName}
+              </label>
             </span>
           ))}
         </div>

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Row from "../Row";
 import TableHeader from "../TableHeader";
 import styles from "./table.module.css";
+import { ColDef } from "../FilterableTable";
 
 // FIXME: Copied from FilterableTable
 interface HasId {
@@ -9,20 +10,87 @@ interface HasId {
   id: string;
 }
 
-type Props<Type> = {
-  data: Type[];
-  columns: string[];
+type Props<RowType> = {
+  data: RowType[];
+  columns: (string | number)[];
+  // columns: string[];
+  originalColumns: ColDef<RowType>[];
 };
 
-function Table<Type extends HasId>({ columns, data }: Props<Type>) {
+function Table<RowType extends HasId>({
+  columns: activeColumns,
+  data: rows,
+  originalColumns,
+}: Props<RowType>) {
+  console.log("originalColumns", originalColumns);
+
+  const rowsByColumn = () => {
+    return originalColumns.map((column) => {
+      return rows.map((row) => {
+        return (
+          <tr key={`row-${row.id}`} id={row.id}>
+            <td>{row[column.field]}</td>
+          </tr>
+        );
+      });
+    });
+  };
+
+  // const columnByRows= () => {
+  //   return rows.map((row) => {
+  //     return originalColumns.map((column) => {
+  //       return (
+  //         <tr key={`row-${row.id}`} id={row.id}>
+  //           <td>{row[column.field]}</td>
+  //         </tr>
+  //       );
+  //     });
+  //   });
+  // };
+
+  const columnByRows = () => {
+    return rows.map((row) => {
+      return (
+        <tr key={`row-${row.id}`}>
+          {originalColumns
+            .filter((originalColumn) =>
+              activeColumns.includes(originalColumn.field)
+            )
+            .map((column) => {
+              return (
+                <td key={`td-${row.id}-${row[column.field]}`}>
+                  {row[column.field]}
+                </td>
+              );
+            })}
+        </tr>
+      );
+    });
+  };
+
+  // const createCellValues = () => {
+  //   return rows.map((row) => {
+  //     return originalColumns.map((column) => {
+  //       return row[column.field];
+  //     });
+  //   });
+  // };
+
+  // console.log(createCellValues());
+  // console.log(originalColumns);
+
   return (
     <table
       className={styles.table}
-      style={{ gridTemplateColumns: `repeat(${columns.length}, 1fr)` }}
+      style={{ gridTemplateColumns: `repeat(${activeColumns.length}, 1fr)` }}
     >
-      <TableHeader items={columns} />
+      <TableHeader
+        items={originalColumns
+          .filter((column) => activeColumns.includes(column.field))
+          .map((columns) => columns.displayName)}
+      />
       <tbody>
-        {data.map((item) => {
+        {/* {rows.map((item) => {
           return (
             <Row
               key={`row-${item.id}`}
@@ -30,7 +98,11 @@ function Table<Type extends HasId>({ columns, data }: Props<Type>) {
               cellValues={columns.map((column) => item[column])}
             />
           );
-        })}
+        })} */}
+        {/* {createCellValues().map((row) => {
+          return <Row key={`row-${item.id}`} id={item.id} cellValues={row} />;
+        })} */}
+        {columnByRows()}
       </tbody>
     </table>
   );

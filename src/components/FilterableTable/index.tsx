@@ -17,25 +17,42 @@ interface HasId {
   id: string;
 }
 
-type Props<Type> = {
-  data: Type[];
+type Props<RowType> = {
+  rows: RowType[];
+  columns: ColDef<RowType>[];
 };
 
-function FilterableTable<Type extends HasId>({
-  data = [],
-}: Props<Type>): JSX.Element {
-  const [firstElement] = data;
-  const columns = Object.keys(firstElement);
-  const [activeColumns, handleActiveColumns] = useActiveColumns(columns);
+export type ColDef<RowType> = {
+  field: RowType[keyof RowType];
+  displayName: string;
+};
+
+function FilterableTable<RowType extends HasId>({
+  rows = [],
+  columns = [],
+}: Props<RowType>): JSX.Element {
+  // const [firstElement] = data;
+  // const columns = Object.keys(firstElement);
+  const columnNames = columns.map((column) => column.displayName);
+
+  const [activeColumns, handleActiveColumns] =
+    useActiveColumns<RowType>(columns);
 
   return (
     <>
       <TableMenu
-        menuItems={columns}
+        menuItems={columns.map((column) => ({
+          field: column.field,
+          displayName: column.displayName,
+        }))}
         activeColumns={activeColumns}
         toggleColumnVisibility={handleActiveColumns}
       />
-      <Table<Type> data={data} columns={activeColumns} />
+      <Table<RowType>
+        data={rows}
+        columns={activeColumns}
+        originalColumns={columns}
+      />
     </>
   );
 }
