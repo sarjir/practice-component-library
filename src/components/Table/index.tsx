@@ -24,17 +24,17 @@ function Table<RowType extends HasId>({
 }: Props<RowType>) {
   console.log("originalColumns", originalColumns);
 
-  const rowsByColumn = () => {
-    return originalColumns.map((column) => {
-      return rows.map((row) => {
-        return (
-          <tr key={`row-${row.id}`} id={row.id}>
-            <td>{row[column.field]}</td>
-          </tr>
-        );
-      });
-    });
-  };
+  // const rowsByColumn = () => {
+  //   return originalColumns.map((column) => {
+  //     return rows.map((row) => {
+  //       return (
+  //         <tr key={`row-${row.id}`} id={row.id}>
+  //           <td>{row[column.field]}</td>
+  //         </tr>
+  //       );
+  //     });
+  //   });
+  // };
 
   // const columnByRows= () => {
   //   return rows.map((row) => {
@@ -48,6 +48,7 @@ function Table<RowType extends HasId>({
   //   });
   // };
 
+  // This one works 👇
   const columnByRows = () => {
     return rows.map((row) => {
       return (
@@ -79,6 +80,18 @@ function Table<RowType extends HasId>({
   // console.log(createCellValues());
   // console.log(originalColumns);
 
+  const currentRows = () => {
+    return rows.map((row) => {
+      return originalColumns
+        .filter((originalColumn) =>
+          activeColumns.includes(originalColumn.field)
+        )
+        .map((column) => row[column.field]);
+    });
+  };
+
+  console.log(currentRows());
+
   return (
     <table
       className={styles.table}
@@ -102,7 +115,17 @@ function Table<RowType extends HasId>({
         {/* {createCellValues().map((row) => {
           return <Row key={`row-${item.id}`} id={item.id} cellValues={row} />;
         })} */}
-        {columnByRows()}
+        {/* {columnByRows()} */}
+        {currentRows().map((row) => {
+          return (
+            <Row
+              // key={`${row.find((item) => item === "id")}-row-${Math.random()}`}
+              key={`${row.find((item) => item === "id")}-row-${Math.random()}`}
+              id={String(row.find((item) => item === "id")) || "row"}
+              cellValues={row}
+            />
+          );
+        })}
       </tbody>
     </table>
   );
