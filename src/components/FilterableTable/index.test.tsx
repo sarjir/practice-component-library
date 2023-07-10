@@ -74,7 +74,9 @@ test("Table component should render", () => {
 });
 
 test("Should allow filtering of which columns to display", async () => {
-  render(<FilterableTable rows={employeeData} columns={columns} />);
+  render(
+    <FilterableTable<EmployeeData> rows={employeeData} columns={columns} />
+  );
 
   expect(screen.getByRole("button", { name: "||| COLUMNS" }));
   expect(screen.queryByRole("menu")).not.toBeInTheDocument();

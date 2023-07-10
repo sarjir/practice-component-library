@@ -31,11 +31,7 @@ function FilterableTable<RowType extends HasId>({
   rows = [],
   columns = [],
 }: Props<RowType>): JSX.Element {
-  // const [firstElement] = data;
-  // const columns = Object.keys(firstElement);
-  const columnNames = columns.map((column) => column.displayName);
-
-  const [activeColumns, handleActiveColumns] =
+  const [activeColumnIds, handleActiveColumnIds] =
     useActiveColumns<RowType>(columns);
 
   return (
@@ -45,12 +41,12 @@ function FilterableTable<RowType extends HasId>({
           field: column.field,
           displayName: column.displayName,
         }))}
-        activeColumns={activeColumns}
-        toggleColumnVisibility={handleActiveColumns}
+        activeColumns={activeColumnIds}
+        toggleColumnVisibility={handleActiveColumnIds}
       />
       <Table<RowType>
         data={rows}
-        columns={activeColumns}
+        activeColumnIds={activeColumnIds}
         originalColumns={columns}
       />
     </>
