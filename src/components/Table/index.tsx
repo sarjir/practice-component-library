@@ -12,85 +12,30 @@ interface HasId {
 
 type Props<RowType> = {
   data: RowType[];
-  columns: (string | number)[];
-  // columns: string[];
+  activeColumnIds: (string | number)[];
   originalColumns: ColDef<RowType>[];
 };
 
 function Table<RowType extends HasId>({
-  columns: activeColumns,
+  activeColumnIds: activeColumns,
   data: rows,
   originalColumns,
 }: Props<RowType>) {
-  console.log("originalColumns", originalColumns);
-
-  // const rowsByColumn = () => {
-  //   return originalColumns.map((column) => {
-  //     return rows.map((row) => {
-  //       return (
-  //         <tr key={`row-${row.id}`} id={row.id}>
-  //           <td>{row[column.field]}</td>
-  //         </tr>
-  //       );
-  //     });
-  //   });
-  // };
-
-  // const columnByRows= () => {
-  //   return rows.map((row) => {
-  //     return originalColumns.map((column) => {
-  //       return (
-  //         <tr key={`row-${row.id}`} id={row.id}>
-  //           <td>{row[column.field]}</td>
-  //         </tr>
-  //       );
-  //     });
-  //   });
-  // };
-
-  // This one works 👇
-  const columnByRows = () => {
-    return rows.map((row) => {
+  function renderTableCells(row: RowType): React.ReactNode {
+    return originalColumns.filter(isColumnActive()).map((column) => {
       return (
-        <tr key={`row-${row.id}`}>
-          {originalColumns
-            .filter((originalColumn) =>
-              activeColumns.includes(originalColumn.field)
-            )
-            .map((column) => {
-              return (
-                <td key={`td-${row.id}-${row[column.field]}`}>
-                  {row[column.field]}
-                </td>
-              );
-            })}
-        </tr>
+        <td key={`td-${row.id}-${row[column.field]}`}>{row[column.field]}</td>
       );
     });
-  };
+  }
 
-  // const createCellValues = () => {
-  //   return rows.map((row) => {
-  //     return originalColumns.map((column) => {
-  //       return row[column.field];
-  //     });
-  //   });
-  // };
-
-  // console.log(createCellValues());
-  // console.log(originalColumns);
-
-  const currentRows = () => {
-    return rows.map((row) => {
-      return originalColumns
-        .filter((originalColumn) =>
-          activeColumns.includes(originalColumn.field)
-        )
-        .map((column) => row[column.field]);
-    });
-  };
-
-  console.log(currentRows());
+  function isColumnActive(): (
+    value: ColDef<RowType>,
+    index: number,
+    array: ColDef<RowType>[]
+  ) => boolean {
+    return (originalColumn) => activeColumns.includes(originalColumn.field);
+  }
 
   return (
     <table
@@ -103,28 +48,8 @@ function Table<RowType extends HasId>({
           .map((columns) => columns.displayName)}
       />
       <tbody>
-        {/* {rows.map((item) => {
-          return (
-            <Row
-              key={`row-${item.id}`}
-              id={item.id}
-              cellValues={columns.map((column) => item[column])}
-            />
-          );
-        })} */}
-        {/* {createCellValues().map((row) => {
-          return <Row key={`row-${item.id}`} id={item.id} cellValues={row} />;
-        })} */}
-        {/* {columnByRows()} */}
-        {currentRows().map((row) => {
-          return (
-            <Row
-              // key={`${row.find((item) => item === "id")}-row-${Math.random()}`}
-              key={`${row.find((item) => item === "id")}-row-${Math.random()}`}
-              id={String(row.find((item) => item === "id")) || "row"}
-              cellValues={row}
-            />
-          );
+        {rows.map((row) => {
+          return <Row key={`row-${row.id}`}>{renderTableCells(row)}</Row>;
         })}
       </tbody>
     </table>

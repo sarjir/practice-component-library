@@ -39,7 +39,7 @@ test("Should render Table", () => {
   render(
     <Table<Test>
       data={mockData}
-      columns={["id", "name", "phone"]}
+      activeColumnIds={["id", "name", "phone"]}
       originalColumns={mockColumns}
     />
   );
