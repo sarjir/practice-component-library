@@ -1,31 +1,25 @@
-// @ts-nocheck
-// FIXME: Remove this 👆
-
 import { useState } from "react";
 import { ColDef } from ".";
 
-type State<RowType> = {
-  originalState: ColDef<RowType>[]
-}
-
-export function useActiveColumns<RowType>(originalState: ColDef<RowType>[]): [string[], (column: string) => void ] {
+export function useActiveColumns<RowType>(originalState: ColDef<RowType>[]): [RowType[keyof RowType][], (column: RowType[keyof RowType]) => void ] {
   const columnNames = originalState.map((column) => column.field)
-  const [activeColumns, updateActiveColumns] = useState(columnNames);
+  const [activeColumnIds, updateActiveColumns] = useState<ColDef<RowType>["field"][]>(columnNames);
 
-  const handleActiveColumns = (column: string): void => {
-    activeColumns.includes(column)
-      ? updateActiveColumns(removeItemFromArray(activeColumns, column))
-      : updateActiveColumns([...activeColumns, column]);
+  const handleActiveColumnIds = (column: ColDef<RowType>["field"]): void => {
+    activeColumnIds.includes(column)
+      ? updateActiveColumns(removeItemFromArray(activeColumnIds, column))
+      : updateActiveColumns([...activeColumnIds, column]);
+  };
+
+  const removeItemFromArray = (
+    array: RowType[keyof RowType][],
+    itemToRemove: RowType[keyof RowType]
+  ): RowType[keyof RowType][] => {
+    const index = array.indexOf(itemToRemove);
+  
+    return [...array.slice(0, index), ...array.slice(index + 1)];
   };
   
-  return [activeColumns, handleActiveColumns]
+  return [activeColumnIds, handleActiveColumnIds]
 }
 
-const removeItemFromArray = (
-  array: string[],
-  itemToRemove: string
-): string[] => {
-  const index = array.indexOf(itemToRemove);
-
-  return [...array.slice(0, index), ...array.slice(index + 1)];
-};
