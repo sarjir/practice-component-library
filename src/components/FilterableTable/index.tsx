@@ -37,10 +37,7 @@ function FilterableTable<RowType extends HasId>({
   return (
     <>
       <TableMenu
-        menuItems={columns.map((column) => ({
-          field: column.field,
-          displayName: column.displayName,
-        }))}
+        menuItems={columns}
         activeColumns={activeColumnIds}
         toggleColumnVisibility={handleActiveColumnIds}
       />
