@@ -21,20 +21,18 @@ function Table<RowType extends HasId>({
   data: rows,
   originalColumns,
 }: Props<RowType>) {
+  const onlyActiveColumns = originalColumns.filter(isColumnActive);
+
+  function isColumnActive(value: ColDef<RowType>): boolean {
+    return activeColumns.includes(value.field);
+  }
+
   function renderTableCells(row: RowType): React.ReactNode {
-    return originalColumns.filter(isColumnActive()).map((column) => {
+    return onlyActiveColumns.map((column) => {
       return (
         <td key={`td-${row.id}-${row[column.field]}`}>{row[column.field]}</td>
       );
     });
-  }
-
-  function isColumnActive(): (
-    value: ColDef<RowType>,
-    index: number,
-    array: ColDef<RowType>[]
-  ) => boolean {
-    return (originalColumn) => activeColumns.includes(originalColumn.field);
   }
 
   return (
@@ -43,9 +41,7 @@ function Table<RowType extends HasId>({
       style={{ gridTemplateColumns: `repeat(${activeColumns.length}, 1fr)` }}
     >
       <TableHeader
-        items={originalColumns
-          .filter(isColumnActive())
-          .map((column) => column.displayName)}
+        items={onlyActiveColumns.map((column) => column.displayName)}
       />
       <tbody>
         {rows.map((row) => {
