@@ -1,14 +1,6 @@
-/* eslint-disable react/jsx-key */
 import { render, screen, prettyDOM } from "@testing-library/react";
 import Row from "./";
 import employees, { EmployeeData } from "../../data";
-
-type OtherData = {
-  id: string;
-  name: String;
-  "123": string;
-  yes: string;
-};
 
 const otherData = {
   id: "1231234345",

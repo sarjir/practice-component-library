@@ -4,8 +4,8 @@ import Checkbox from "../Checkbox";
 
 type Props<RowType> = {
   menuItems: ColDef<RowType>[];
-  toggleColumnVisibility: (column: RowType[keyof RowType]) => void;
-  activeColumns: RowType[keyof RowType][];
+  toggleColumnVisibility: (column: keyof RowType) => void;
+  activeColumns: (keyof RowType)[];
 };
 
 function TableMenu<RowType>({
@@ -19,7 +19,7 @@ function TableMenu<RowType>({
     setEditMenuVisibility((prev) => !prev);
   };
 
-  const handleCheckboxClick = (fieldName: RowType[keyof RowType]) => {
+  const handleCheckboxClick = (fieldName: keyof RowType) => {
     toggleColumnVisibility(fieldName);
   };
 
@@ -30,7 +30,7 @@ function TableMenu<RowType>({
         <div role="menu">
           {menuItems.map((item) => (
             <Checkbox<RowType>
-              key={`checkbox-${item.field}`}
+              key={`checkbox-${String(item.field)}`}
               onChange={(fieldName) => handleCheckboxClick(fieldName)}
               label={item.displayName}
               checked={activeColumns.includes(item.field)}

@@ -1,5 +1,6 @@
 import { render, screen } from "@testing-library/react";
 import Table from "./";
+import { ColDef } from "../FilterableTable";
 
 test("Should render Table", () => {
   type Test = {
@@ -21,7 +22,7 @@ test("Should render Table", () => {
     },
   ];
 
-  const mockColumns = [
+  const mockColumns: ColDef<Test>[] = [
     {
       field: "id",
       displayName: "ID",

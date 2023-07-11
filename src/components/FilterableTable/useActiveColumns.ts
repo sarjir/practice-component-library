@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { ColDef } from ".";
 
-export function useActiveColumns<RowType>(originalState: ColDef<RowType>[]): [RowType[keyof RowType][], (column: RowType[keyof RowType]) => void ] {
+export function useActiveColumns<RowType>(originalState: ColDef<RowType>[]): [(keyof RowType)[], (column: (keyof RowType)) => void ] {
   const columnNames = originalState.map((column) => column.field)
   const [activeColumnIds, updateActiveColumns] = useState<ColDef<RowType>["field"][]>(columnNames);
 
@@ -12,9 +12,9 @@ export function useActiveColumns<RowType>(originalState: ColDef<RowType>[]): [Ro
   };
 
   const removeItemFromArray = (
-    array: RowType[keyof RowType][],
-    itemToRemove: RowType[keyof RowType]
-  ): RowType[keyof RowType][] => {
+    array: (keyof RowType)[],
+    itemToRemove: keyof RowType
+  ): (keyof RowType)[] => {
     const index = array.indexOf(itemToRemove);
   
     return [...array.slice(0, index), ...array.slice(index + 1)];

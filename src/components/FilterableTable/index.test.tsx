@@ -1,9 +1,9 @@
 import { render, screen, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
-import FilterableTable from "./index";
+import FilterableTable, { ColDef } from "./index";
 import employeeData, { EmployeeData } from "../../data";
 
-const columns = [
+const columns: ColDef<EmployeeData>[] = [
   {
     field: "id",
     displayName: "ID",

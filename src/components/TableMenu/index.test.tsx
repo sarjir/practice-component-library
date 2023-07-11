@@ -2,9 +2,10 @@ import { render, screen, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import TableHeader from "./";
 import { EmployeeData } from "@/data";
+import { ColDef } from "../FilterableTable";
 
-const mockedMenuItems = [
-  { field: "name", displayName: "Name" },
+const mockedMenuItems: ColDef<EmployeeData>[] = [
+  { field: "Name", displayName: "Name" },
   { field: "id", displayName: "ID" },
 ];
 const mockToggleVisibility = jest.fn();

@@ -63,4 +63,4 @@ type Story = StoryObj<typeof FilterableTable>;
 export const Primary: Story = {  args: {
   rows: employeeData,
   columns: columns
-},};
+}};

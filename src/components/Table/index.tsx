@@ -12,7 +12,7 @@ interface HasId {
 
 type Props<RowType> = {
   data: RowType[];
-  activeColumnIds: (string | number)[];
+  activeColumnIds: (keyof RowType)[];
   originalColumns: ColDef<RowType>[];
 };
 

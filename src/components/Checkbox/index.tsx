@@ -4,7 +4,7 @@ type Props<RowType> = {
   label: ColDef<RowType>["displayName"];
   id: ColDef<RowType>["field"];
   checked: boolean;
-  onChange: (id: RowType[keyof RowType]) => void;
+  onChange: (id: keyof RowType) => void;
 };
 
 function Checkbox<RowType>({ label, id, checked, onChange }: Props<RowType>) {
@@ -13,10 +13,10 @@ function Checkbox<RowType>({ label, id, checked, onChange }: Props<RowType>) {
       <input
         onChange={() => onChange(id)}
         checked={checked}
-        id={`${id}-columnCheckbox`}
+        id={`${String(id)}-columnCheckbox`}
         type="checkbox"
       />
-      <label htmlFor={`${id}-columnCheckbox`}>{label}</label>
+      <label htmlFor={`${String(id)}-columnCheckbox`}>{label}</label>
     </span>
   );
 }
