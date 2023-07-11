@@ -44,8 +44,8 @@ function Table<RowType extends HasId>({
     >
       <TableHeader
         items={originalColumns
-          .filter((column) => activeColumns.includes(column.field))
-          .map((columns) => columns.displayName)}
+          .filter(isColumnActive())
+          .map((column) => column.displayName)}
       />
       <tbody>
         {rows.map((row) => {
