@@ -3,39 +3,40 @@ import TableMenu from "../TableMenu";
 import Table from "../Table";
 import { useActiveColumns } from "./useActiveColumns";
 
-/**
- * What state do I have?
- * Which columns are active to filter out that data
- * Which checkmarks are active in the menu (based on active columns?)
- *
- * this is not state
- * - original list of data
- * - all columns (can be computed)
- */
 interface HasId {
   [key: string]: string | number; // Is this negating what I want to achieve? Does this open up my type to allow more than what I want?
   id: string;
 }
 
-type Props<Type> = {
-  data: Type[];
+type Props<RowType> = {
+  rows: RowType[];
+  columns: ColDef<RowType>[];
 };
 
-function FilterableTable<Type extends HasId>({
-  data = [],
-}: Props<Type>): JSX.Element {
-  const [firstElement] = data;
-  const columns = Object.keys(firstElement);
-  const [activeColumns, handleActiveColumns] = useActiveColumns(columns);
+export type ColDef<RowType> = {
+  field: keyof RowType;
+  displayName: string;
+};
+
+function FilterableTable<RowType extends HasId>({
+  rows = [],
+  columns = [],
+}: Props<RowType>): JSX.Element {
+  const [activeColumnIds, handleActiveColumnIds] =
+    useActiveColumns<RowType>(columns);
 
   return (
     <>
       <TableMenu
         menuItems={columns}
-        activeColumns={activeColumns}
-        toggleColumnVisibility={handleActiveColumns}
+        activeColumns={activeColumnIds}
+        toggleColumnVisibility={handleActiveColumnIds}
       />
-      <Table<Type> data={data} columns={activeColumns} />
+      <Table<RowType>
+        data={rows}
+        activeColumnIds={activeColumnIds}
+        originalColumns={columns}
+      />
     </>
   );
 }

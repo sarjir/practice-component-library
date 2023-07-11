@@ -1,5 +1,6 @@
 import { render, screen } from "@testing-library/react";
 import Table from "./";
+import { ColDef } from "../FilterableTable";
 
 test("Should render Table", () => {
   type Test = {
@@ -21,7 +22,28 @@ test("Should render Table", () => {
     },
   ];
 
-  render(<Table<Test> data={mockData} columns={["id", "name", "phone"]} />);
+  const mockColumns: ColDef<Test>[] = [
+    {
+      field: "id",
+      displayName: "ID",
+    },
+    {
+      field: "name",
+      displayName: "First name",
+    },
+    {
+      field: "phone",
+      displayName: "Phone nr",
+    },
+  ];
+
+  render(
+    <Table<Test>
+      data={mockData}
+      activeColumnIds={["id", "name", "phone"]}
+      originalColumns={mockColumns}
+    />
+  );
   expect(screen.getByRole("table")).toBeInTheDocument();
   expect(screen.getAllByRole("columnheader")).toHaveLength(3);
   expect(screen.getAllByRole("row")).toHaveLength(3);

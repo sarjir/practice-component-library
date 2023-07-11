@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Row from "../Row";
 import TableHeader from "../TableHeader";
 import styles from "./table.module.css";
+import { ColDef } from "../FilterableTable";
 
 // FIXME: Copied from FilterableTable
 interface HasId {
@@ -9,27 +10,42 @@ interface HasId {
   id: string;
 }
 
-type Props<Type> = {
-  data: Type[];
-  columns: string[];
+type Props<RowType> = {
+  data: RowType[];
+  activeColumnIds: (keyof RowType)[];
+  originalColumns: ColDef<RowType>[];
 };
 
-function Table<Type extends HasId>({ columns, data }: Props<Type>) {
+function Table<RowType extends HasId>({
+  activeColumnIds: activeColumns,
+  data: rows,
+  originalColumns,
+}: Props<RowType>) {
+  const onlyActiveColumns = originalColumns.filter(isColumnActive);
+
+  function isColumnActive(value: ColDef<RowType>): boolean {
+    return activeColumns.includes(value.field);
+  }
+
+  function renderTableCells(row: RowType): React.ReactNode {
+    return onlyActiveColumns.map((column) => {
+      return (
+        <td key={`td-${row.id}-${row[column.field]}`}>{row[column.field]}</td>
+      );
+    });
+  }
+
   return (
     <table
       className={styles.table}
-      style={{ gridTemplateColumns: `repeat(${columns.length}, 1fr)` }}
+      style={{ gridTemplateColumns: `repeat(${activeColumns.length}, 1fr)` }}
     >
-      <TableHeader items={columns} />
+      <TableHeader
+        items={onlyActiveColumns.map((column) => column.displayName)}
+      />
       <tbody>
-        {data.map((item) => {
-          return (
-            <Row
-              key={`row-${item.id}`}
-              id={item.id}
-              cellValues={columns.map((column) => item[column])}
-            />
-          );
+        {rows.map((row) => {
+          return <Row key={`row-${row.id}`}>{renderTableCells(row)}</Row>;
         })}
       </tbody>
     </table>
