@@ -1,6 +1,7 @@
-import { MouseEventHandler, SyntheticEvent, useState } from "react";
+import { useState } from "react";
 import { ColDef } from "../FilterableTable";
 import Checkbox from "../Checkbox";
+import FilterMenu from "../FilterMenu";
 
 type Props<RowType> = {
   menuItems: ColDef<RowType>[];
@@ -26,6 +27,7 @@ function TableMenu<RowType>({
   return (
     <div>
       <button onClick={handleEditColumnsClick}>||| COLUMNS</button>
+      <button>✨ FILTERS</button>
       {editMenuVisibility && (
         <div role="menu">
           {menuItems.map((item) => (
@@ -39,6 +41,7 @@ function TableMenu<RowType>({
           ))}
         </div>
       )}
+      <FilterMenu />
     </div>
   );
 }

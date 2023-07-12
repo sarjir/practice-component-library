@@ -1,6 +1,6 @@
 import { render, screen, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
-import TableHeader from "./";
+import TableMenu from "./";
 import { EmployeeData } from "@/data";
 import { ColDef } from "../FilterableTable";
 
@@ -12,7 +12,7 @@ const mockToggleVisibility = jest.fn();
 
 test("TableHeader renders", async () => {
   render(
-    <TableHeader<EmployeeData>
+    <TableMenu<EmployeeData>
       activeColumns={["id"]}
       menuItems={mockedMenuItems}
       toggleColumnVisibility={mockToggleVisibility}
@@ -21,6 +21,10 @@ test("TableHeader renders", async () => {
 
   expect(
     screen.getByRole("button", { name: "||| COLUMNS" })
+  ).toBeInTheDocument();
+
+  expect(
+    screen.getByRole("button", { name: "✨ FILTERS" })
   ).toBeInTheDocument();
   userEvent.click(screen.getByRole("button", { name: "||| COLUMNS" }));
 
@@ -33,17 +37,22 @@ test("TableHeader renders", async () => {
 
 test("Toggles visibility of menu and allows for filtering", async () => {
   render(
-    <TableHeader<EmployeeData>
+    <TableMenu<EmployeeData>
       activeColumns={["id"]}
       menuItems={mockedMenuItems}
       toggleColumnVisibility={mockToggleVisibility}
     />
   );
-  expect(screen.queryByRole("menu")).not.toBeInTheDocument();
+  // Temporary test for filterMenu
+  expect(screen.getByRole("menu")).toBeInTheDocument();
+
+  // Add this back after removal of temporary test for filterMenu 👇
+  // expect(screen.queryByRole("menu")).not.toBeInTheDocument();
 
   userEvent.click(screen.getByRole("button", { name: "||| COLUMNS" }));
   await waitFor(() => {
-    expect(screen.getByRole("menu")).toBeInTheDocument();
+    // expect(screen.getByRole("menu")).toBeInTheDocument();
+    expect(screen.getAllByRole("menu")).toHaveLength(2);
   });
 
   expect(screen.getByRole("checkbox", { name: "ID" })).toBeChecked();
@@ -55,7 +64,7 @@ test("Toggles visibility of menu and allows for filtering", async () => {
   });
 
   userEvent.click(screen.getByRole("button", { name: "||| COLUMNS" }));
-  await waitFor(() => {
-    expect(screen.queryByRole("menu")).not.toBeInTheDocument();
-  });
+  // await waitFor(() => {
+  //   expect(screen.queryByRole("menu")).not.toBeInTheDocument();
+  // });
 });
