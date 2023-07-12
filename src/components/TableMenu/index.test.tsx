@@ -43,16 +43,12 @@ test("Toggles visibility of menu and allows for filtering", async () => {
       toggleColumnVisibility={mockToggleVisibility}
     />
   );
-  // Temporary test for filterMenu
-  expect(screen.getByRole("menu")).toBeInTheDocument();
 
-  // Add this back after removal of temporary test for filterMenu 👇
-  // expect(screen.queryByRole("menu")).not.toBeInTheDocument();
+  expect(screen.queryByRole("menu")).not.toBeInTheDocument();
 
   userEvent.click(screen.getByRole("button", { name: "||| COLUMNS" }));
   await waitFor(() => {
-    // expect(screen.getByRole("menu")).toBeInTheDocument();
-    expect(screen.getAllByRole("menu")).toHaveLength(2);
+    expect(screen.getByRole("menu")).toBeInTheDocument();
   });
 
   expect(screen.getByRole("checkbox", { name: "ID" })).toBeChecked();
@@ -64,7 +60,15 @@ test("Toggles visibility of menu and allows for filtering", async () => {
   });
 
   userEvent.click(screen.getByRole("button", { name: "||| COLUMNS" }));
-  // await waitFor(() => {
-  //   expect(screen.queryByRole("menu")).not.toBeInTheDocument();
-  // });
+  await waitFor(() => {
+    expect(screen.queryByRole("menu")).not.toBeInTheDocument();
+  });
+
+  userEvent.click(screen.getByRole("button", { name: "✨ FILTERS" }));
+  await waitFor(() => {
+    expect(screen.getByRole("menu")).toBeInTheDocument();
+    expect(screen.getByLabelText("Columns")).toBeInTheDocument();
+    expect(screen.getByLabelText("Operator")).toBeInTheDocument();
+    expect(screen.getByLabelText("Value")).toBeInTheDocument();
+  });
 });
