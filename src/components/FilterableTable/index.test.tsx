@@ -95,4 +95,35 @@ test("Should allow filtering of which columns to display", async () => {
       screen.queryByRole("columnheader", { name: "ID" })
     ).not.toBeInTheDocument();
   });
+
+  userEvent.click(screen.getByRole("button", { name: "✨ FILTERS" }));
+  await waitFor(() => {
+    userEvent.click(screen.getByLabelText("Columns"));
+  });
+  await waitFor(() => {
+    // userEvent.click(screen.getByRole("option", { name: "ID" }));
+    // userEvent.click(screen.getByRole("option", { name: "id" }));
+    userEvent.selectOptions(
+      screen.getByRole("combobox", { name: "Columns" }),
+      "id"
+    );
+  });
+  await waitFor(() => {
+    userEvent.click(screen.getByLabelText("Operator"));
+  });
+  await waitFor(() => {
+    // userEvent.click(screen.getByRole("option", { name: "equals" }));
+    userEvent.selectOptions(
+      screen.getByRole("combobox", { name: "Operator" }),
+      "equals"
+    );
+  });
+  userEvent.type(
+    screen.getByRole("textbox", { name: "Value" }),
+    "33a7f853-8081-5c86-948f-cb02b36606db"
+  );
+
+  await waitFor(() => {
+    expect(screen.getAllByRole("row")).toHaveLength(1);
+  });
 });

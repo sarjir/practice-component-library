@@ -9,6 +9,7 @@ const mockedMenuItems: ColDef<EmployeeData>[] = [
   { field: "id", displayName: "ID" },
 ];
 const mockToggleVisibility = jest.fn();
+const mockSetFilterQuery = jest.fn();
 
 test("TableHeader renders", async () => {
   render(
@@ -16,6 +17,7 @@ test("TableHeader renders", async () => {
       activeColumns={["id"]}
       menuItems={mockedMenuItems}
       toggleColumnVisibility={mockToggleVisibility}
+      setFilterQuery={mockSetFilterQuery}
     />
   );
 
@@ -41,6 +43,7 @@ test("Toggles visibility of menu and allows for filtering", async () => {
       activeColumns={["id"]}
       menuItems={mockedMenuItems}
       toggleColumnVisibility={mockToggleVisibility}
+      setFilterQuery={mockSetFilterQuery}
     />
   );
 

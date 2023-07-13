@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ColDef } from "../FilterableTable";
+import { ColDef, FilterQuery, StringOperator } from "../FilterableTable";
 import Checkbox from "../Checkbox";
 import FilterMenu from "../FilterMenu";
 
@@ -7,6 +7,7 @@ type Props<RowType> = {
   menuItems: ColDef<RowType>[];
   toggleColumnVisibility: (column: keyof RowType) => void;
   activeColumns: (keyof RowType)[];
+  setFilterQuery: (query: FilterQuery<RowType>) => void;
 };
 
 enum MenuItem {
@@ -23,10 +24,14 @@ function TableMenu<RowType>({
   menuItems,
   activeColumns = [],
   toggleColumnVisibility,
+  setFilterQuery,
 }: Props<RowType>): JSX.Element {
   const [visibleMenu, setEditMenuVisibility] = useState<MenuItem | null>(null);
 
+  // TODO: Break this out into function in module scope / other file
+  // Or can it be handled in a custom hook? No, I think that is reserved to state?
   const menus: Menus = {
+    // Break this out to its own component to make it more readable 👇
     [MenuItem.Columns]: (
       <div role="menu">
         {menuItems.map((item) => (
@@ -40,10 +45,17 @@ function TableMenu<RowType>({
         ))}
       </div>
     ),
-    [MenuItem.Filters]: <FilterMenu />,
+    [MenuItem.Filters]: (
+      <FilterMenu
+        setFilterQuery={setFilterQuery}
+        columnDropdownValues={menuItems.map((menuItem) => menuItem.field)}
+        operatorsDropdownValues={["equals", "contains"]}
+      />
+    ),
   };
 
   const handleMenuButtonClick = (menuItem: MenuItem): void => {
+    // setEditMenuVisibility((prev) => !prev);
     setEditMenuVisibility((prev) => {
       if (menuItem === prev) {
         return null;
